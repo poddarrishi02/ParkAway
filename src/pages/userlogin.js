@@ -2,7 +2,8 @@ import React from 'react'
 
 function Userlogin() {
     return (
-        <div class="container">
+        <>
+        {/* <div class="container">
   <form class="box-form" action="/" method="get">
 
     <div class="box-title">
@@ -71,7 +72,8 @@ function Userlogin() {
     <p>Welcome to</p>
     <h1>Programmer<h1>
   </div>
-</div>
+</div> */}
+</>
     )
 }
 
