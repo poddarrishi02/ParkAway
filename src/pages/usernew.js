@@ -1,5 +1,9 @@
 import React from 'react'
 import styles from '../styles/usernew.module.css'
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import { Link } from 'react-router-dom';
+// Button
 function Usernew() {
     function checkPassword() {
         let password = document.getElementById("password").value;
@@ -23,93 +27,124 @@ function Usernew() {
         }
     }
     return (
-        <div className={styles.outer}>
-            <div className={styles.heading}>
-                User Registration
-            </div>
-            <form id="regForm">
-                {/* action="/" method="get" */}
-                <table>
-                    <tboby>
-                        <tr>
-                            <td className={styles.lbl}>First Name</td>
-                            <td><input type="text" name="fname" id="name" className={styles.textbox} /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><label className={styles.help}></label></td>
-                        </tr>
-                        <tr>
-                            <td className={styles.lbl}>Last Name</td>
-                            <td><input type="text" name="lname" id="name" className={styles.textbox} /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><label className={styles.help}></label></td>
-                        </tr>
-                        <tr>
-                            <td className={styles.lbl}>Username</td>
-                            <td><input type="text" name="mail" id="mail" className={styles.textbox} /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><label className={styles.help}></label></td>
-                        </tr>
-                        <tr>
-                            <td className={styles.lbl} id="password">Password</td>
-                            <td><input type="password" name="password1" id="password1" className={styles.textbox} /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><label className={styles.help}></label></td>
-                        </tr>
-                        <tr>
-                            <td className={styles.lbl} id="cnfrmPassword">Confirm Password</td>
-                            <td><input type="password" name="password2" id="password2" className={styles.textbox} /></td>
-                        </tr>
-                        <p id="message"></p>
-                        <tr>
-                            <td></td>
-                            <td><label className={styles.help}></label></td>
-                        </tr>
-                        <tr>
-                            <td className={styles.lbl}>Residential Address</td>
-                            <td><textarea maxlength="250" name="info" id="info" className={styles.textbox}></textarea></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><label className={styles.help}></label></td>
-                        </tr>
-                        <tr>
-                            <td className={styles.lbl}>Email ID</td>
-                            <td><input type="text" name="mail" id="mail" className={styles.textbox} /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><label className={styles.help}></label></td>
-                        </tr>
-                        <tr>
-                            <td className={styles.lbl}>Mobile number</td>
-                            <td><input type="text" name="mail" id="mail" className={styles.textbox} /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><label className={styles.help}></label></td>
-                        </tr>
-                        <tr>
-                            <td className={styles.lbl}>Car Registration number</td>
-                            <td><input type="text" name="mail" id="mail" className={styles.textbox} /></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><label className={styles.help}></label></td>
-                        </tr>
-                    </tboby>
-                </table>
-                <input type="submit" id="send" value="Register" className={styles.register} onClick={checkPassword} />
-            </form>
+        <>
+            <div className={styles.container}>
+                <div className={styles.welcomeOuter}>
+                    <p className={styles.welcome}>Welcome to</p>
+                    <h1 className={styles.welcome}>Car Booking Service</h1>
+                </div>
+                <div className={styles.rightCol}>
+                    <div className={styles.heading}>
+                        <h2>User Registration</h2>
+                    </div>
+                    <div className={styles.breakLine}>
+                    </div>
+                    <form className={styles.boxForm} action="/" method="get">
+                        <div className={styles.boxInputs}>
+                            <div className={styles.pw}>
+                                <TextField
+                                    fullWidth
+                                    maxWidth="sm"
+                                    required
+                                    id="outlined-required"
+                                    label="First name"
+                                    defaultValue=""
+                                />
+                            </div>
+                            <div className={styles.pw}>
+                                <TextField
+                                    fullWidth
+                                    maxWidth="sm"
+                                    required
+                                    id="outlined-required"
+                                    label="Last name"
+                                    defaultValue=""
+                                />
+                            </div>
+                            <div className={styles.pw}>
+                                <TextField
+                                    fullWidth
+                                    maxWidth="sm"
+                                    required
+                                    id="outlined-required"
+                                    label="Username"
+                                    defaultValue=""
+                                />
+                            </div>
+                            <div className={styles.pw}>
+                                <TextField
+                                    fullWidth
+                                    maxWidth="sm"
+                                    id="outlined-password-input"
+                                    label="Password"
+                                    type="password"
+                                    autoComplete="current-password"
+                                    required
+                                />
+                            </div>
+                            <div className={styles.pw}>
+                                <TextField
+                                    fullWidth
+                                    maxWidth="sm"
+                                    id="outlined-password-input"
+                                    label="Confirm Password"
+                                    type="password"
+                                    autoComplete="current-password"
+                                    required
+                                />
+                            </div>
+                            <div className={styles.pw}>
+                                <TextField
+                                    fullWidth
+                                    maxWidth="sm"
+                                    id="outlined-textarea"
+                                    label="Residential Address"
+                                    multiline
+                                    required
+                                />
+                            </div>
+                            <div className={styles.pw}>
+                                <TextField
+                                    fullWidth
+                                    maxWidth="sm"
+                                    id="outlined-password-input"
+                                    label="Email ID"
+                                    type="email"
+                                    autoComplete="current-password"
+                                    required
+                                />
+                            </div>
+                            <div className={styles.pw}>
+                                <TextField
+                                    fullWidth
+                                    maxWidth="sm"
+                                    required
+                                    id="outlined-required"
+                                    label="Mobile number"
+                                    defaultValue=""
+                                />
+                            </div>
+                            <div className={styles.pw}>
+                                <TextField
+                                    fullWidth
+                                    maxWidth="sm"
+                                    required
+                                    id="outlined-required"
+                                    label="Car Registration Number"
+                                    defaultValue=""
+                                    style={{ "marginBottom": "2em" }}
+                                />
+                            </div>
+                            <Button variant="contained" className={styles.submit} className={styles.btn}>Register</Button>
+                        </div>
+                        <div className={styles.reg}>
+                            Already registered?  &nbsp;<Link to="/user" style={{textDecoration:"none"}}><a href="#" >Sign in</a></Link>
+                        </div>
 
-        </div>
+                    </form>
+                </div>
+            </div>
+        </>
     )
 }
 

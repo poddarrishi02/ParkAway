@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: "Ubuntu";
+}
+
+body,
+.container,
+.boxForm,
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: rgb(204, 204, 255);
+}
+
+.container {
+    width: 640px;
+    padding: 10px;
+
+    border-radius: 20px;
+    background-color: rgb(34, 34, 34);
+}
+
+/* box's*/
+
+.boxForm {
+    min-width: 320px;
+    padding: 20px 15px;
+    border-radius: 10px;
+    background-color: rgb(238, 238, 255);
+    flex-direction: column;
+}
+
+.heading {
+    padding: 25px;
+    font-size: 1.3em;
+    color: rgb(68, 68, 68);
+}
+
+.boxInputs {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pw {
+    margin-top: 1.5em;
+    /* margin-left: 0; */
+}
+.reg{
+    margin-top: 1em;
+    /* align-self: flex-start; */
+}
+.reg a{
+    /* color: blue; */
+    font-family: "Ubuntu";
+}
+/*inputs*/
+
+.inputsEmail,
+.inputsPassword {
+    /* position: relative; */
+    min-width: 100%;
+    height: 40px;
+}
+
+.inputsEmail {
+    margin-bottom: 25px;
+}
+
+.inputsRemember {
+    margin: 15px 0 15px 0;
+}
+
+.input {
+    /* appearance: none; */
+
+    min-width: 100%;
+    height: 100%;
+
+    /* border: none; */
+    border-bottom: 2px solid rgb(68, 68, 68);
+    background-color: transparent;
+}
+
+#email {
+    padding-left: 55px;
+    transition: 0.5s padding;
+}
+
+#password {
+    padding-left: 80px;
+    transition: 0.5s padding;
+}
+
+
+#remember {
+    accent-color: rgb(34, 34, 34);
+}
+
+.input:hover {
+    border-bottom: 2px solid black;
+}
+
+.input::placeholder {
+    font-size: 1.2em;
+    color: black;
+
+}
+
+
+.labelInputs {
+    position: absolute;
+    top: 9px;
+    left: 0px;
+
+    cursor: text;
+
+    transition: 0.5s top;
+}
+
+/* .input:focus+.labelInputs {
+    top: -15px;
+} */
+
+/*button*/
+
+.boxLogin {
+    /* position: relative; */
+    min-width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 2px;
+    border-radius: 100px;
+    background-color: rgb(34, 34, 34);
+    overflow: hidden;
+}
+
+.boxLogin:hover {
+    background-color: whitesmoke;
+}
+
+.btnLogin {
+    /* appearance: none;
+    position: relative; */
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgb(34, 34, 34);
+    font-size: 1em;
+    color: rgb(238, 238, 255);
+    cursor: pointer;
+    /* transition: 0.3s; */
+}
+
+/* register*/
+
+.newAcc {
+    min-width: 100%;
+    line-height: 1.5;
+    color: rgb(68, 68, 68);
+}
+
+.newAcc a {
+    color: black;
+}
+
+.newAcc a:hover {
+    color: rgb(68, 68, 68);
+}
+
+.breakLine {
+    /* position: relative; */
+    min-width: 90%;
+    height: 2px;
+    margin-top: 30px;
+    background: linear-gradient(to right,
+            rgb(221, 221, 221) 43%,
+            transparent 43%,
+            transparent 57%,
+            rgb(221, 221, 221) 57%);
+}
+
+
+
+/* 
+p::selection,
+a::selection,
+label::selection,
+h1::selection,
+h2::selection {
+    background-color: rgb(34, 34, 34);
+    color: rgb(238, 238, 255); */
+/* } */
+
+/*socials*/
+
+.socials {
+    width: 100%;
+    gap: 20px;
+
+    padding: 30px 0 25px;
+}
+
+.social {
+    width: 40px;
+    height: 40px;
+
+    font-size: 30px;
+
+    /* display: grid; */
+    /* place-content: center; */
+
+    /* transition: 0.5s; */
+}
+
+.linksocials {
+    text-decoration: none;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    color: rgb(238, 238, 255);
+}
+
+
+.social:hover {
+    transform: scale(1.1);
+}
+
+/* .social::before {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    left: 20px;
+
+    width: 0px;
+    height: 0px;
+
+    background: rgb(221, 221, 221);
+    border-radius: 100%;
+
+    transition: 0.5s;
+}
+
+.social:hover::before {
+    width: 30px;
+    height: 10px;
+
+    left: 5px;
+} */
+
+/**/
+
+.welcomeOuter {
+    width: 100%;
+    min-width: 150px;
+    padding-left: 20px;
+    color: rgb(238, 238, 255);
+}
+
+@media (max-width: 650px) {
+    .container {
+        flex-direction: column;
+        width: 320px;
+    }
+
+    .welcomeOuter {
+        padding: 3px 10px 10px;
+        order: 1;
+    }
+
+    .boxForm {
+        order: 2;
+        min-width: 310px;
+    }
+}
+
+.welcome {
+    color: white;
+}

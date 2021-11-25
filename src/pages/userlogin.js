@@ -1,80 +1,90 @@
 import React from 'react'
-
+import styles from '../styles/userlogin.module.css'
+import Button from '@mui/material/Button';
+import { FaFacebookF, FaGoogle } from 'react-icons/fa'
+import TextField from '@mui/material/TextField';
+import { Link } from 'react-router-dom';
+// Button
 function Userlogin() {
-    return (
-        <>
-        {/* <div class="container">
-  <form class="box-form" action="/" method="get">
+  return (
+    <>
+      <div className={styles.container}>
+        <form className={styles.boxForm} action="/" method="get">
+          <div className={styles.heading}>
+            <h2>User Login</h2>
+          </div>
+          <div className={styles.boxInputs}>
 
-    <div class="box-title">
-      <h2>Login</h2>
-    </div>
+            {/* <div className={styles.inputsEmail}> */}
+            {/* <input type="email" name="email" id="email" className={styles.input} placeholder="Email:"></input> */}
+            <div className={styles.pw}>
+              <TextField
+                fullWidth
+                maxWidth="sm"
+                id="outlined-password-input"
+                label="Username"
+                type="text"
+                autoComplete="current-password"
+              />
+            </div>
+            <div className={styles.pw}>
+              <TextField
+                fullWidth
+                maxWidth="sm"
+                id="outlined-password-input"
+                label="Password"
+                type="password"
+                autoComplete="current-password"
+              />
+            </div>
+            
+            {/* <div className={styles.inputsPassword}>
+            <input type="password" name="password" id="password" className={styles.input} placeholder="Password:"></input>
+          </div> */}
 
-    <div class="box-inputs">
+            <div className={styles.inputsRemember}>
+              <input type="checkbox" name="remember" id="remember" ></input>
+              <label for="remember">Remember me</label>
+            </div>
 
-      <div class="inputs-email">
-        <input type="email" name="email" id="email" class="input" placeholder="Type your e-mail">
-        <label for="email" class="label-inputs">E-mail:</label>
+            {/* <div className={styles.boxLogin}>
+            <button className={styles.btnLogin} type="submit" value="enter">Sign in</button>
+          </div> */}
+            {/* <input type="submit" value="Sign in" className={styles.submit}></input> */}
+            <Button variant="contained" className={styles.submit}>Sign in</Button>
+          </div>
+          <div className={styles.reg}>
+            <Link to="/usernew" style={{textDecoration:"none"}}><a href="#" >Create an Account</a></Link>
+          </div>
+
+          <div className={styles.breakLine}>
+          </div>
+
+          <div className={styles.socials}>
+            <div className={styles.social}>
+              <a href="#" className={styles.linksocials}>
+                <FaFacebookF />
+                {/* <ion-icon name="logo-google"></ion-icon> */}
+              </a>
+            </div>
+
+            <div className={styles.social}>
+              <a href="#" className={styles.linksocials}>
+                <FaGoogle />
+                {/* <ion-icon name="logo-github"></ion-icon> */}
+              </a>
+            </div>
+
+          </div>
+
+        </form>
+        <div className={styles.welcomeOuter}>
+          <p className={styles.welcome}>Welcome to</p>
+          <h1 className={styles.welcome}>Car Booking Service</h1>
+        </div>
       </div>
-
-      <div class="inputs-password">
-        <input type="password" name="password" id="password" class="input" placeholder="Type your password">
-        <label for="password" class="label-inputs">Password:</label>
-      </div>
-
-      <div class="inputs-remember">
-        <input type="checkbox" name="remember" id="remember" checked>
-        <label for="remember">Remember me</label>
-      </div>
-
-      <div class="box-btn-login">
-        <button class="btn-login" type="submit" value="enter">Enter</button>
-      </div>
-    </div>
-
-    <div class="box-register">
-      <p>Forgot password? <a href="#">Click here!</a></p>
-      <p>Don't have an account? <a href="#">Create one!</a></p>
-    </div>
-
-    <div class="break-line">
-      <p>ou</p>
-    </div>
-
-    <div class="box-midias">
-      <div class="midia">
-        <a href="#" class="link-midias">
-          <ion-icon name="logo-google"></ion-icon>
-        </a>
-      </div>
-
-      <div class="midia">
-        <a href="#" class="link-midias">
-          <ion-icon name="logo-github"></ion-icon>
-        </a>
-      </div>
-
-      <div class="midia">
-        <a href="#" class="link-midias">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-      </div>
-      <div class="midia">
-        <a href="#" class="link-midias">
-          <ion-icon name="logo-codepen"></ion-icon>
-        </a>
-      </div>
-
-    </div>
-
-  </form>
-  <div class="hero">
-    <p>Welcome to</p>
-    <h1>Programmer<h1>
-  </div>
-</div> */}
-</>
-    )
+    </>
+  )
 }
 
 export default Userlogin
