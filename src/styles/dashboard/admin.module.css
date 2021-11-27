@@ -32,8 +32,19 @@
 }
 .dashItems
 {
-    background-color: rgb(17, 14, 14);
+    /* background-color: rgb(17, 14, 14); */
+    background-color: rgb(20, 16, 16);
+
     color: white;
     padding:3vh;
     margin: 1vh;
+}
+.manage{
+    display: flex;
+    flex-direction: column;
+}
+.manageWorker{
+    font-weight: 600;
+    justify-content: flex-start;
+    text-transform: none;
 }
