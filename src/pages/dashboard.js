@@ -11,6 +11,7 @@ function Dashboard() {
         <div className={styles.outer}>
             {isAdmin?<AdminDash/>:isWorker?<WorkerDash/>:<UserDash/>}
         </div>
+        
     )
 }
 
