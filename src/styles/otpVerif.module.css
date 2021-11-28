@@ -57,3 +57,9 @@ body {
     padding: 2vw;
     width:30vw
 }
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
