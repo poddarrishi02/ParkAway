@@ -7,6 +7,8 @@ import Usernew from './pages/usernew';
 import Stafflogin from './pages/stafflogin';
 import Adminlogin from './pages/adminlogin';
 import Staffnew from './pages/staffnew';
+import Dashboard from './pages/dashboard';
+import OtpVerif from './pages/otpVerif';
 function App() {
   return (
     <Router>
@@ -17,6 +19,8 @@ function App() {
         <Route exact path="/usernew" component={Usernew} />
         <Route exact path="/staff" component={Stafflogin} />
         <Route exact path="/staffnew" component={Staffnew} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/verify" component={OtpVerif} />
       </Switch>
     </Router>
   );
