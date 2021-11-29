@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/userlogin.module.css'
 import Button from '@mui/material/Button';
 import { FaFacebookF, FaGoogle } from 'react-icons/fa'
 import TextField from '@mui/material/TextField';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 // Button
 function Userlogin() {
+  const [user, setUser] = useState({userName:"", password:""});
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:8080/user' , user)
+    .then(res => {
+      alert(res.data);
+    })  
+    .catch(err => { 
+      alert(err.response.data);
+    })
+    setUser({userName:"", password:""});
+  }
+
   return (
     <>
       <div className={styles.container}>
-        <form className={styles.boxForm} action="/" method="get">
+        <form className={styles.boxForm} onSubmit={(e) => handleSubmit(e)}>
           <div className={styles.heading}>
             <h2>User Login</h2>
           </div>
@@ -25,6 +39,8 @@ function Userlogin() {
                 label="Username"
                 type="text"
                 autoComplete="current-password"
+                value={user.userName}
+                onChange={(e) => setUser({...user, userName: e.target.value})}
               />
             </div>
             <div className={styles.pw}>
@@ -35,6 +51,8 @@ function Userlogin() {
                 label="Password"
                 type="password"
                 autoComplete="current-password"
+                value={user.password}
+                onChange={(e) => setUser({...user, password: e.target.value})}
               />
             </div>
             
@@ -51,7 +69,7 @@ function Userlogin() {
             <button className={styles.btnLogin} type="submit" value="enter">Sign in</button>
           </div> */}
             {/* <input type="submit" value="Sign in" className={styles.submit}></input> */}
-            <Button variant="contained" className={styles.submit}>Sign in</Button>
+            <Button variant="contained" type="submit" className={styles.submit}>Sign in</Button>
           </div>
           <div className={styles.reg}>
             <Link to="/usernew" style={{textDecoration:"none"}}><a href="#" >Create an Account</a></Link>

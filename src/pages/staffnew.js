@@ -6,47 +6,34 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 // Button
-function Usernew() {
-	const [userData, setUserData] = useState({
+function Staffnew() {
+	const [staffData, setStaffData] = useState({
 		name: "",
 		userName: "",
 		password: "",
 		address: "",
 		phone: "",
 		email: "",
-		car_no: "",
-	});
-
-	const [error, setError] = useState({
-		name: "",
-		userName: "",
-		password: "",
-		address: "",
-		phone: "",
-		email: "",
-		car_no: "",
 	});
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		userData.name ? setError({ ...error, name: "" }) : setError({ ...error, name: "Name is required" });
 
 		axios
-			.post("http://localhost:8080/usernew", userData)
+			.post("http://localhost:8080/staffnew", staffData)
 			.then((res) => {
 				alert(res.data);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-			setUserData({
+			setStaffData({
 				name: "",
 				userName: "",
 				password: "",
 				address: "",
 				phone: "",
-				email: "",
-				car_no: "",
+				email: ""
 			})
 	};
 
@@ -59,7 +46,7 @@ function Usernew() {
 				</div>
 				<div className={styles.rightCol}>
 					<div className={styles.heading}>
-						<h2>User Registration</h2>
+						<h2>Staff Registration</h2>
 					</div>
 					<div className={styles.breakLine}></div>
 					<form className={styles.boxForm} onSubmit={(e) => handleSubmit(e)}>
@@ -72,10 +59,9 @@ function Usernew() {
 									id="outlined-required"
 									label="Full Name"
 									defaultValue=""
-									error={error.name}
-									value={userData.name}
+									value={staffData.name}
 									onChange={(e) =>
-										setUserData({ ...userData, name: e.target.value })
+										setStaffData({ ...staffData, name: e.target.value })
 									}
 								/>
 							</div>
@@ -94,13 +80,12 @@ function Usernew() {
 									fullWidth
 									maxWidth="sm"
 									required
-									error={error.userName}
 									id="outlined-required"
 									label="Username"
 									defaultValue=""
-									value={userData.userName}
+									value={staffData.userName}
 									onChange={(e) =>
-										setUserData({ ...userData, userName: e.target.value })
+										setStaffData({ ...staffData, userName: e.target.value })
 									}
 								/>
 							</div>
@@ -113,10 +98,9 @@ function Usernew() {
 									type="password"
 									autoComplete="current-password"
 									required
-									error={error.password}
-									value={userData.password}
+									value={staffData.password}
 									onChange={(e) =>
-										setUserData({ ...userData, password: e.target.value })
+										setStaffData({ ...staffData, password: e.target.value })
 									}
 								/>
 							</div>
@@ -139,10 +123,9 @@ function Usernew() {
 									label="Residential Address"
 									multiline
 									required
-									error={error.address}
-									value={userData.address}
+									value={staffData.address}
 									onChange={(e) =>
-										setUserData({ ...userData, address: e.target.value })
+										setStaffData({ ...staffData, address: e.target.value })
 									}
 								/>
 							</div>
@@ -153,12 +136,11 @@ function Usernew() {
 									id="outlined-password-input"
 									label="Email ID"
 									type="email"
-									error={error.email}
 									autoComplete="current-password"
 									required
-									value={userData.email}
+									value={staffData.email}
 									onChange={(e) =>
-										setUserData({ ...userData, email: e.target.value })
+										setStaffData({ ...staffData, email: e.target.value })
 									}
 								/>
 							</div>
@@ -170,27 +152,10 @@ function Usernew() {
 									id="outlined-required"
 									label="Mobile number"
 									defaultValue=""
-									error={error.mobile}
-									value={userData.phone}
+									value={staffData.phone}
 									onChange={(e) =>
-										setUserData({ ...userData, phone: e.target.value })
+										setStaffData({ ...staffData, phone: e.target.value })
 									}
-								/>
-							</div>
-							<div className={styles.pw}>
-								<TextField
-									fullWidth
-									maxWidth="sm"
-									required
-									id="outlined-required"
-									error={error.city}
-									label="Car Registration Number"
-									defaultValue=""
-									value={userData.car_no}
-									onChange={(e) =>
-										setUserData({ ...userData, car_no: e.target.value })
-									}
-									style={{ marginBottom: "2em" }}
 								/>
 							</div>
 							<Button
@@ -204,7 +169,7 @@ function Usernew() {
 						</div>
 						<div className={styles.reg}>
 							Already registered? &nbsp;
-							<Link to="/user" style={{ textDecoration: "none" }}>
+							<Link to="/staff" style={{ textDecoration: "none" }}>
 								<a href="#">Sign in</a>
 							</Link>
 						</div>
@@ -215,4 +180,4 @@ function Usernew() {
 	);
 }
 
-export default Usernew;
+export default Staffnew;
