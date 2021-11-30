@@ -3,29 +3,42 @@ import styles from '../styles/usernew.module.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 // Button
 function Usernew() {
-    function checkPassword() {
-        let password = document.getElementById("password").value;
-        let cnfrmPassword = document.getElementById("cnfrm-password").value;
-        console.log(" Password:", password, '\n', "Confirm Password:", cnfrmPassword);
-        let message = document.getElementById("message");
+    // function checkPassword() {
+    //     let password = document.getElementById("password").value;
+    //     let cnfrmPassword = document.getElementById("cnfrm-password").value;
+    //     console.log(" Password:", password, '\n', "Confirm Password:", cnfrmPassword);
+    //     let message = document.getElementById("message");
 
-        if (password.length != 0) {
-            if (password == cnfrmPassword) {
-                message.textContent = "Passwords match";
-                message.style.backgroundColor = "#1dcd59";
-            }
-            else {
-                message.textContent = "Password don't match";
-                message.style.backgroundColor = "#ff4d4d";
-            }
-        }
-        else {
-            alert("Password can't be empty!");
-            message.textContent = "";
-        }
-    }
+    //     if (password.length != 0) {
+    //         if (password == cnfrmPassword) {
+    //             message.textContent = "Passwords match";
+    //             message.style.backgroundColor = "#1dcd59";
+    //         }
+    //         else {
+    //             message.textContent = "Password don't match";
+    //             message.style.backgroundColor = "#ff4d4d";
+    //         }
+    //     }
+    //     else {
+    //         alert("Password can't be empty!");
+    //         message.textContent = "";
+    //     }
+    // }
+    // const [userData, setuserData] = useState({ username: "", password: "" });
+    // const handleSubmit = async (e) => {
+    // 	e.preventDefault();
+
+    // 	axios.post("http://localhost:8080/userlogin", adminData)
+    // 		.then((res) => {
+    // 			alert(res);
+    // 		})
+    // 		.catch((err) => {
+    // 			alert(err);
+    // 		});
+    // };
     return (
         <>
             <div className={styles.container}>
@@ -135,10 +148,12 @@ function Usernew() {
                                     style={{ "marginBottom": "2em" }}
                                 />
                             </div>
-                            <Button variant="contained" className={styles.submit} className={styles.btn}>Register</Button>
+                            <Link to="/verify" style={{ textDecoration: "none" }}>
+                                <Button variant="contained" className={styles.submit} className={styles.btn}>Register</Button>
+                            </Link>
                         </div>
                         <div className={styles.reg}>
-                            Already registered?  &nbsp;<Link to="/user" style={{textDecoration:"none"}}><a href="#" >Sign in</a></Link>
+                            Already registered?  &nbsp;<Link to="/user" style={{ textDecoration: "none" }}><a href="#" >Sign in</a></Link>
                         </div>
 
                     </form>
