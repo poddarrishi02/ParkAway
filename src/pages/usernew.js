@@ -5,8 +5,10 @@ import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 // Button
 function Usernew() {
+	const history = useHistory();
 	const [userData, setUserData] = useState({
 		name: "",
 		userName: "",
@@ -29,25 +31,45 @@ function Usernew() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		userData.name ? setError({ ...error, name: "" }) : setError({ ...error, name: "Name is required" });
+		userData.name
+			? setError({ ...error, name: "" })
+			: setError({ ...error, name: "Name is required" });
+		userData.userName
+			? setError({ ...error, userName: "" })
+			: setError({ ...error, userName: "User Name is required" });
+		userData.password
+			? setError({ ...error, password: "" })
+			: setError({ ...error, password: "Password is required" });
+		userData.address
+			? setError({ ...error, address: "" })
+			: setError({ ...error, address: "Address is required" });
+		userData.phone
+			? setError({ ...error, phone: "" })
+			: setError({ ...error, phone: "Phone is required" });
+		userData.email
+			? setError({ ...error, email: "" })
+			: setError({ ...error, email: "Email is required" });
+		userData.car_no
+			? setError({ ...error, car_no: "" })
+			: setError({ ...error, car_no: "Car Number is required" });
 
-		axios
-			.post("http://localhost:8080/usernew", userData)
-			.then((res) => {
-				alert(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-			setUserData({
-				name: "",
-				userName: "",
-				password: "",
-				address: "",
-				phone: "",
-				email: "",
-				car_no: "",
-			})
+		if (
+			userData.name != "" && userData.userName != "" && userData.password != "" && userData.address != "" && userData.phone != "" && userData.email != "" && userData.car_no != "")
+			{
+				history.pusg({
+					pathname:"/verify",
+					state: userData
+				})			
+			}
+		setUserData({
+			name: "",
+			userName: "",
+			password: "",
+			address: "",
+			phone: "",
+			email: "",
+			car_no: "",
+		});
 	};
 
 	return (
