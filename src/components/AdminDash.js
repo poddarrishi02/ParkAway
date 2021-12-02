@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/dashboard/admin.module.css'
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@mui/material/Button';
 import AddWorker from './AddWorker';
-import RemoveWorker from './RemoveWorker';
 import Default from './Default';
 
 function AdminDash() {
