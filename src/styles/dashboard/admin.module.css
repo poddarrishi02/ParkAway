@@ -12,6 +12,8 @@
 .content{
     display: flex;
     height: 90vh;
+    background-color:rgb(252, 236, 212);
+
 }
 
 .leftNav{
