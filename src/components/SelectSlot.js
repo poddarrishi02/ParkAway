@@ -8,8 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Default from './Default';
 
-function AdminDash() {
-    const [active, setactive] = useState(<AddWorker />);
+function SelectSlot() {
     return (
         <div className={styles.outer}>
             <div className={styles.title}>Select Date</div>
@@ -62,4 +61,4 @@ function AdminDash() {
     )
 }
 
-export default AdminDash
+export default SelectSlot

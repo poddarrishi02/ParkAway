@@ -8,7 +8,7 @@ import SelectSlot from './SelectSlot';
 import { Link } from 'react-router-dom'
 import Default from './Default';
 
-function AdminDash() {
+function WorkerDash() {
     const [active, setactive] = useState(<StaffProfile />);
     return (
         //     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -52,4 +52,4 @@ function AdminDash() {
     )
 }
 
-export default AdminDash
+export default WorkerDash

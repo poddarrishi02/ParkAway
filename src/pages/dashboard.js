@@ -4,9 +4,9 @@ import UserDash from '../components/UserDash';
 import WorkerDash from '../components/WorkerDash';
 import styles from '../styles/dashboard.module.css'
 function Dashboard() {
-    var isAdmin=true;
+    var isAdmin=false;
     var isWorker=false;
-    var isUser=false;
+    var isUser=true;
     return (
         <div className={styles.outer}>
             {isAdmin?<AdminDash/>:isWorker?<WorkerDash/>:<UserDash/>}

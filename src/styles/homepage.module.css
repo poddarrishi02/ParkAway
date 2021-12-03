@@ -23,16 +23,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .container {
     min-width: 25em;
     padding: 1.2em;
-
+    margin-top: 10vh;
     border-radius: 20px;
     background-color: rgb(34, 34, 34);
 }
-
+.title
+{
+    font-size: 3.5em;
+    font-weight: bolder;
+}
 .boxForm {
     min-width: 24em;
     padding: 2.2em 1.1em;

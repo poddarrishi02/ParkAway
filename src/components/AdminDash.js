@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styles from '../styles/dashboard/admin.module.css'
 import Button from '@mui/material/Button';
 import AddWorker from './AddWorker';
+import { Link } from 'react-router-dom'
+import LogoutIcon from '@mui/icons-material/Logout';
 import Default from './Default';
 
 function AdminDash() {
@@ -10,6 +12,11 @@ function AdminDash() {
         <div className={styles.outer}>
             <div className={styles.topNav}>
                 <div className={styles.navHead}>Admin</div>
+                <div className={styles.logout}>
+                    <Link to="/" style={{textDecoration:"none"}}><Button variant="outlined" startIcon={<LogoutIcon style={{ fill: "white" }} />} style={{ backgroundColor:"black" ,fontWeight: "bolder", fontFamily: 'Ubuntu', minWidth: "100%", color: "white", textTransform: "none", fontSize: "1.1em" }} >
+                        Logout
+                    </Button></Link>
+                </div>
             </div>
             <div className={styles.content}>
                 <div className={styles.leftNav}>

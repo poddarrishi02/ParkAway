@@ -10,6 +10,7 @@ function Homepage() {
     return (
         <>
             <div className={styles.outer}>
+                <div className={styles.title}>Welcome to ParkAway</div>
             <div className={styles.container}>
                 <form className={styles.boxForm} action="/" method="get">
                     <div className={styles.heading}>
