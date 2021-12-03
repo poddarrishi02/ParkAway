@@ -19,11 +19,20 @@ function App() {
 		<Router>
 			<Switch>
 				<Route exact path="/" component={Homepage} />
-				<Route exact path="/user" component={Userlogin} />
-				<Route exact path="/adminlogin" component={Adminlogin} />
-				<Route exact path="/usernew" component={Usernew} />
-				<Route exact path="/staff" component={Stafflogin} />
-				<Route exact path="/staffnew" component={Staffnew} />
+				<Route exact path="/user">
+					<Userlogin access={access} setAccess={setAccess} />
+				</Route>
+				<Route exact path="/adminlogin">
+					<Adminlogin access={access} setAccess={setAccess} />
+				</Route>
+				<Route exact path="/usernew">
+					<Usernew/>
+				</Route>
+				<Route exact path="/staff">
+					<Stafflogin access={access} setAccess={setAccess} />
+				</Route>
+				<Route exact path="/staffnew" component={Staffnew}>
+				</Route>
 				<Route exact path="/dashboard">
 					<Dashboard access={access} />
 				</Route>

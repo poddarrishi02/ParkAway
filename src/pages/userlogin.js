@@ -5,14 +5,24 @@ import { FaFacebookF, FaGoogle } from 'react-icons/fa'
 import TextField from '@mui/material/TextField';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 // Button
-function Userlogin() {
+function Userlogin({access, setAccess}) {
+  const history = useHistory();
   const [user, setUser] = useState({userName:"", password:""});
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:8080/user' , user)
     .then(res => {
-      alert(res.data);
+      if(res.data == "Login Successful")
+      {
+        setAccess({...access, user: true});
+        history.push("/dashboard");
+      }
+      else
+      {
+        alert("Wrong Credentials !!! try again .... ")
+      }
     })  
     .catch(err => { 
       alert(err.response.data);

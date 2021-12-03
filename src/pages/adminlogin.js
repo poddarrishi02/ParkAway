@@ -4,26 +4,25 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import axios from "axios";
-
-function Adminlogin() {
-
-	React.useEffect(()=>{
-		axios.get("http://localhost:8080/").then(()=>{
-			console.log("connected");
-		})
-	}, [])
+import { useHistory } from "react-router-dom";
+function Adminlogin({ access, setAcess }) {
+	const history = useHistory();
+	
 
 	const [adminData, setAdminData] = useState({ userName: "", password: "" });
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		
-		axios.post("http://localhost:8080/adminlogin", adminData)
-			.then((res) => {
-				alert(res.data);
-			})
-			.catch((err) => {
-				alert(err.response.data);
-			});
+		if ( !(adminData.userName === "") && !(adminData.password === "")) {
+			axios
+				.post("http://localhost:8080/adminlogin", adminData)
+				.then((res) => {
+					setAcess({ ...access, admin: true });
+					history.push("/dashboard");
+				})
+				.catch((err) => {
+					alert(err.response.data);
+				});
+		}
 	};
 	return (
 		<>
@@ -38,10 +37,12 @@ function Adminlogin() {
 								fullWidth
 								maxWidth="sm"
 								id="outlined-password-input"
-								label="userName"
+								label="Username"
 								type="text"
 								autoComplete="current-password"
 								value={adminData.userName}
+								error={adminData.userName ? false : true}
+								helperText={adminData.userName ? "" : "Username is Required !"}
 								onChange={(e) =>
 									setAdminData({ ...adminData, userName: e.target.value })
 								}
@@ -56,6 +57,8 @@ function Adminlogin() {
 								type="password"
 								autoComplete="current-password"
 								value={adminData.password}
+								error={adminData.password ? false : true}
+								helperText={adminData.password ? "" : "Password is Required !"}
 								onChange={(e) =>
 									setAdminData({ ...adminData, password: e.target.value })
 								}
