@@ -8,7 +8,7 @@ function AddWorker() {
     const workersInitial = [{ name: "Ken Griffey", status: 83.8, id: 1 }, { name: "Derek Jeter", status: 71.3, id: 2 }, { name: "Cal Ripken", status: 95.9, id: 3 }];
     const [workers, setworkers] = useState(workersInitial);
     return (
-        <div style={{ width: "100%", height: "100%" }}>
+        <div className={styles.outer}>
             <div className={styles.title}>
                 Manage Workers
             </div>

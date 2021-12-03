@@ -1,0 +1,28 @@
+.title{
+    margin: 5vh;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+.slotform{
+    margin: 5vh;
+}
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+}
+.toprow{
+    display: flex;
+    justify-content: space-between;
+}
+.save{
+    margin-right: 0;
+    margin-left: auto;
+    /* justify-self: flex-end; */
+}
+.servicelist{
+    width: 15vw;
+}

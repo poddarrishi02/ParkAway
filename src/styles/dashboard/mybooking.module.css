@@ -1,39 +1,14 @@
-.addW{
-    margin: 3vh;
-}
-*{
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    box-sizing: border-box;
-}
 .title{
-    margin: 3vh;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.7em;
-}
-.manage{
-    background-color: rgb(248, 241, 241);
+    font-size: 3em;
+    font-weight: bolder;
     margin:5vh;
-    font-size:1.5em;
-    border: 0.3vh solid black;
-    border-radius: 1vh;
-    width:100%;
+    margin-left: 4vw;
 }
-.manageTitle{
-    margin: 3vh;
+.nobooking{
+    font-size: 2em;
+    margin-left: 4vw;
 }
-
-  .outer {
-    font-family: 'Poppins', 'Verdana', sans-serif;
-    /* display: flex;
-    align-items: center; */
-    padding: 1.25em;
-    /* min-height: 100vh; */
-    color: #444;
-    /* min-width: 100vw; */
-    flex-direction: column;
-  }
-  
-  table {
+table {
     width: 90%;
     /* margin-left: 0; */
     border-spacing: 0;
@@ -50,7 +25,7 @@
   }
   
   th {
-    background: #215A8E;
+    background: rgb(248, 169, 22);
     color: #fff;
   }
   
@@ -67,9 +42,14 @@
   tr, td {
     display: block;
   }
-  
+  th{
+    font-size: 1.5em;
+    font-weight: bolder;
+  }
   td {
     position: relative;
+    font-size: 1.5em;
+    font-weight: bolder;
   }
   
   td::before {
@@ -97,6 +77,9 @@
     background-color: #ddd;
   }
   
+  .status{
+      color:rgb(47, 255, 75);
+  }
   
   @media only screen and (min-width: 768px) {
     
@@ -148,4 +131,3 @@
     
     
   }
-

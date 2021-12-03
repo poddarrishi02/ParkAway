@@ -32,6 +32,7 @@ function Userlogin({access, setAccess}) {
 
   return (
     <>
+      <div className={styles.outer}>
       <div className={styles.container}>
         <form className={styles.boxForm} onSubmit={(e) => handleSubmit(e)}>
           <div className={styles.heading}>
@@ -110,6 +111,7 @@ function Userlogin({access, setAccess}) {
           <p className={styles.welcome}>Welcome to</p>
           <h1 className={styles.welcome}>Car Booking Service</h1>
         </div>
+      </div>
       </div>
     </>
   )

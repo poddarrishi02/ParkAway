@@ -1,0 +1,35 @@
+.outer{
+    height:80vh;
+    width:80vw;
+    display: flex;
+    flex-direction: column;
+}
+.book{
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    margin-left: 5vh;
+}
+.title{
+    font-size: 2.5em;
+    font-weight:bolder;
+    margin-top: 4vh;
+    margin-left: 8vh;
+}
+.image{
+    height: 60vh;
+    width: auto;
+}
+.input{
+    display: flex;
+    justify-content: space-around;
+    margin: 5vh;
+}
+.bgcol{
+    background-color: rgb(255, 250, 230);
+    width: 80vw;
+    height: 16vh;
+    margin-top: 2vh;
+}
+.loc{
+    width:15vw;
+}

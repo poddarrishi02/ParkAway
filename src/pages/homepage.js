@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom'
 function Homepage() {
     return (
         <>
+            <div className={styles.outer}>
+                <div className={styles.title}>Welcome to ParkAway</div>
             <div className={styles.container}>
                 <form className={styles.boxForm} action="/" method="get">
                     <div className={styles.heading}>
@@ -31,6 +33,7 @@ function Homepage() {
                     <div className={styles.breakLine}>
                     </div>
                 </form>
+            </div>
             </div>
         </>
     )

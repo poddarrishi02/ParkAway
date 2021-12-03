@@ -6,28 +6,38 @@
 .topNav{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 10vh;
     background-color: rgb(117, 188, 204);
 }
 .content{
     display: flex;
     height: 90vh;
-}
+    background-color:rgb(252, 236, 212);
 
+}
+.logout{
+    margin-right: 7vh;
+}
 .leftNav{
     display: flex;
     flex-direction: column;
     background-color: black;
     width: 20vw;
     height: 90vh;
+
 }
 .display{
     height: 90vh;
+    width:80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .navHead{
     color: black;
     padding: 5vh;
-    font-size:x-large;
+    font-size:xx-large;
     font-weight: bolder;
 }
 .dashItems
