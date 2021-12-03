@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 function Adminlogin() {
     return (
         <>
+            <div className={styles.outer}>
             <div className={styles.container}>
                 <form className={styles.boxForm} action="/" method="get">
                     <div className={styles.heading}>
@@ -40,6 +41,7 @@ function Adminlogin() {
                     <div className={styles.breakLine}>
                     </div>
                 </form>
+            </div>
             </div>
         </>
     )
