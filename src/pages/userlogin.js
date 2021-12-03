@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 function Userlogin() {
   return (
     <>
+      <div className={styles.outer}>
       <div className={styles.container}>
         <form className={styles.boxForm} action="/" method="get">
           <div className={styles.heading}>
@@ -82,6 +83,7 @@ function Userlogin() {
           <p className={styles.welcome}>Welcome to</p>
           <h1 className={styles.welcome}>Car Booking Service</h1>
         </div>
+      </div>
       </div>
     </>
   )

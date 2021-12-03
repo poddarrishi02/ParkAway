@@ -22,13 +22,15 @@
     margin: 3vh;
 }
 
-  body {
+  .outer {
     font-family: 'Poppins', 'Verdana', sans-serif;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     padding: 1.25em;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     color: #444;
+    /* min-width: 100vw; */
+    flex-direction: column;
   }
   
   table {

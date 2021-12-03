@@ -28,6 +28,7 @@ function OtpVerif() {
         return () => clearInterval(timer);
     }, [counter]);
     return (
+        <div className={styles.outer}>
         <div className={styles.container}>
             <h1 className={styles.otp}>OTP Verification</h1>
             <div className={styles.msgbox}>
@@ -52,6 +53,7 @@ function OtpVerif() {
                 <Box mt={3} ><Typography fontWeight={500} align="center" color='textSecondary'> Resend OTP in <span style={{ color: "green", fontWeight: "bold" }}> {counter} s</span> </Typography></Box>
                 {counter==0&&<Button variant="contained" onClick={()=>{setCounter(totaltime)}}>Resend OTP</Button>}
             </form>
+        </div>
         </div>
     )
 }

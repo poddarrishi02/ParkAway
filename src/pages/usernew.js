@@ -41,6 +41,7 @@ function Usernew() {
     // };
     return (
         <>
+            <div className={styles.outer}>
             <div className={styles.container}>
                 <div className={styles.welcomeOuter}>
                     <p className={styles.welcome}>Welcome to</p>
@@ -158,6 +159,7 @@ function Usernew() {
 
                     </form>
                 </div>
+            </div>
             </div>
         </>
     )

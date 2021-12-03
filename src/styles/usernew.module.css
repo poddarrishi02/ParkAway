@@ -8,7 +8,7 @@
   font-family: "Ubuntu";
 }
 
-body,
+
 .container,
 .socials {
   display: flex;
@@ -16,9 +16,13 @@ body,
   align-items: center;
 }
 
-body {
-  width: 100%;
+.outer {
+  min-width: 100vw;
+  min-height: 100vh;
   background: rgb(204, 204, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
