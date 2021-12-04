@@ -42,15 +42,15 @@ table {
   tr, td {
     display: block;
   }
-  th{
+  /* th{
     font-size: 1.5em;
     font-weight: bolder;
-  }
-  td {
+  } */
+  /* td {
     position: relative;
     font-size: 1.5em;
     font-weight: bolder;
-  }
+  } */
   
   td::before {
     content: attr(data-label);
@@ -127,7 +127,5 @@ table {
     
     td:nth-child(n+2):nth-child(odd) {
       background-color: transparent;
-    }
-    
-    
+    } 
   }

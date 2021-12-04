@@ -6,6 +6,7 @@ import BookSlot from './BookSlot';
 import { Link } from 'react-router-dom'
 import Default from './Default';
 import MyBookings from './MyBookings';
+import UserProfile from './UserProfile';
 
 function UserDash() {
     const [active, setactive] = useState(<BookSlot />);
@@ -34,6 +35,12 @@ function UserDash() {
                             setactive(<MyBookings />)
                         }} variant="text" style={{ fontWeight: "bolder", fontFamily: "Ubuntu", minWidth: "100%", justifyContent: "flex-start", color: "white", textTransform: "none", fontSize: "1.1em" }}
                             sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>View My Bookings</Button>
+                    </div>
+                    <div className={styles.dashItems}>
+                        <Button onClick={() => {
+                            setactive(<UserProfile />)
+                        }} variant="text" style={{ fontWeight: "bolder", fontFamily: "Ubuntu", minWidth: "100%", justifyContent: "flex-start", color: "white", textTransform: "none", fontSize: "1.1em" }}
+                            sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>View Profile</Button>
                     </div>
 
                 </div>

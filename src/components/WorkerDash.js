@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 import Default from './Default';
 
 function WorkerDash() {
-    const [active, setactive] = useState(<SelectSlot />);
+    const [active, setactive] = useState(<StaffProfile />);
     return (
         //     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         //   rel="stylesheet"></link>
