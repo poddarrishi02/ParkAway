@@ -6,12 +6,11 @@ import styles from '../styles/dashboard.module.css'
 function Dashboard() {
     var isAdmin=true;
     var isWorker=false;
-    var isUser=false;
+    // var isUser=false;
     return (
         <div className={styles.outer}>
             {isAdmin?<AdminDash/>:isWorker?<WorkerDash/>:<UserDash/>}
         </div>
-        
     )
 }
 
