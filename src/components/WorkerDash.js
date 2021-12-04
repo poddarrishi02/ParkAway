@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 import Default from './Default';
 
 function WorkerDash() {
-    const [active, setactive] = useState(<StaffProfile />);
+    const [active, setactive] = useState(<SelectSlot />);
     return (
         //     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         //   rel="stylesheet"></link>
@@ -34,15 +34,8 @@ function WorkerDash() {
                         <Button onClick={() => {
                             setactive(<SelectSlot />)
                         }} variant="text" style={{ fontWeight: "bolder", fontFamily: "Ubuntu", minWidth: "100%", justifyContent: "flex-start", color: "white", textTransform: "none", fontSize: "1.1em" }}
-                            sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Select Slot/Date</Button>
+                            sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Select Services/Slots </Button>
                     </div>
-                    <div className={styles.dashItems}>
-                        <Button onClick={() => {
-                            setactive(<AddWorker />)
-                        }} variant="text" style={{ fontWeight: "bolder", fontFamily: "Ubuntu", minWidth: "100%", justifyContent: "flex-start", color: "white", textTransform: "none", fontSize: "1.1em" }}
-                            sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Select Services</Button>
-                    </div>
-
                 </div>
                 <div className={styles.display}>
                     {active}
