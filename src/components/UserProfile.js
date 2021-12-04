@@ -5,7 +5,7 @@ import styles from '../styles/dashboard/staffprofile.module.css'
 import Avatar from '@mui/material/Avatar';
 import Rating from '@mui/material/Rating';
 
-function UserProfile() {
+function UserProfile({userData}) {
     let name= "Ram";
     return (
         <div className={styles.outer}>
@@ -17,15 +17,15 @@ function UserProfile() {
             <div className={styles.details}>
 
             <div className={styles.row}>
-            <div className={styles.fieldName}>Name :</div> <div className={styles.content}>Ram Kumar</div>
+            <div className={styles.fieldName}>Name :</div> <div className={styles.content}>{userData.name}</div>
             </div>
             
             <div className={styles.row}>
-            <div className={styles.fieldName}>Username :</div> <div className={styles.content}>ram</div>
+            <div className={styles.fieldName}>Username :</div> <div className={styles.content}>{userData.userName}</div>
             </div>
             
             <div className={styles.row}>
-            <div className={styles.fieldName}>Car Number :</div> <div className={styles.content}>KA-09 XX XXXX</div>
+            <div className={styles.fieldName}>Car Number :</div> <div className={styles.content}>{userData.car_no}</div>
             </div>
 {/*             
             <div className={styles.row}>
