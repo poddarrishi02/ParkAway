@@ -8,30 +8,69 @@
     font-family: "Ubuntu";
 }
 
+canvas {
+    z-index: 1;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
 
 .container,
 .boxForm {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
 }
 
 .outer {
     min-width: 100vw;
     min-height: 100vh;
-    background: rgb(204, 204, 255);
+    /* background: rgb(204, 204, 255); */
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* background-image: url(../assets/graph3.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 50vw 35vh; */
 }
 
+.imgtopleft{
+    position: absolute;
+    left:6vw;
+    /* top:2vh; */
+    bottom:45vh;
+}
+.imag{
+    width: 20vw;
+    /* height: 0vh; */
+}
+.imgleft{
+    position: absolute;
+    left:7vw;
+    bottom: 0vh;
+}
+.ima{
+    position: absolute;
+    right:2vw;
+    top:2vw;
+    width:20vw;
+    height: 40vh;
+}
 .container {
     min-width: 25em;
     padding: 1.2em;
-    margin-top: 10vh;
+    margin-top: 8vh;
     border-radius: 20px;
     background-color: rgb(34, 34, 34);
+    z-index: 10;
 }
 .title
 {
@@ -39,13 +78,17 @@
     font-weight: bolder;
 }
 .boxForm {
-    min-width: 24em;
-    padding: 2.2em 1.1em;
+    box-sizing: border-box;
+    /* min-width: 24em; */
+    width: 40vw;
+    padding: 3em 1.1em;
     padding-left: 1.5em;
     padding-right: 1.5em;
     border-radius: 10px;
     background-color: rgb(238, 238, 255);
+    /* background-color: transparent; */
     flex-direction: column;
+    z-index: 10;
 }
 
 .heading {
@@ -74,7 +117,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1.1em;
+    /* margin: 1.1em; */
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-top: 2em;
 }
 
 .image {

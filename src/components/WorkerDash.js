@@ -46,15 +46,8 @@ function WorkerDash({staffData, setStaffData, access, setAccess}) {
                         <Button onClick={() => {
                             setactive(<SelectSlot staffData={staffData} />)
                         }} variant="text" style={{ fontWeight: "bolder", fontFamily: "Ubuntu", minWidth: "100%", justifyContent: "flex-start", color: "white", textTransform: "none", fontSize: "1.1em" }}
-                            sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Select Slot/Date</Button>
+                            sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Select Services/Slots </Button>
                     </div>
-                    <div className={styles.dashItems}>
-                        <Button onClick={() => {
-                            setactive(<AddWorker />)
-                        }} variant="text" style={{ fontWeight: "bolder", fontFamily: "Ubuntu", minWidth: "100%", justifyContent: "flex-start", color: "white", textTransform: "none", fontSize: "1.1em" }}
-                            sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Select Services</Button>
-                    </div>
-
                 </div>
                 <div className={styles.display}>
                     {active}
