@@ -24,7 +24,7 @@ table {
    height: 0;
   }
   
-  th {
+  .tablehead {
     background: rgb(248, 169, 22);
     color: #fff;
   }
@@ -42,11 +42,11 @@ table {
   tr, td {
     display: block;
   }
-  /* th{
-    font-size: 1.5em;
+  .tablehead{
+    font-size: 1.1em;
     font-weight: bolder;
-  } */
-  /* td {
+  }
+  .tablerows, .status {
     position: relative;
     font-size: 1.5em;
     font-weight: bolder;
