@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 import styles from '../styles/dashboard/addWorker.module.css'
 function AddWorker() {
-    const workersInitial = [{ name: "Ken Griffey", status: 83.8, id: 1 }, { name: "Derek Jeter", status: 71.3, id: 2 }, { name: "Cal Ripken", status: 95.9, id: 3 }];
+    const workersInitial = [{ name: "Ken Griffey", status: "Active", id: 1 }, { name: "Derek Jeter", status: "Active", id: 2 }, { name: "Cal Ripken", status: "Active", id: 3 }];
     const [workers, setworkers] = useState(workersInitial);
     return (
         <div className={styles.outer}>
@@ -30,8 +30,8 @@ function AddWorker() {
                         {workers.map(w => {
                             return (
                                 <tr>
-                                    <td data-label="name">{w.name} </td>
-                                    <td data-label="war">{w.status}</td>
+                                    <td className={styles.tablecontent} data-label="name">{w.name} </td>
+                                    <td className={styles.status} data-label="war">{w.status}</td>
                                     <td data-label="ba">
                                         <Button id={w.id} variant="contained" startIcon={<DeleteIcon style={{ fill: "white" }} />}
                                             onClick={(e) => {
