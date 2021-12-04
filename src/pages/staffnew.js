@@ -5,8 +5,10 @@ import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 // Button
 function Staffnew() {
+	const navigate = useNavigate();
 	const [staffData, setStaffData] = useState({
 		name: "",
 		userName: "",
@@ -16,27 +18,27 @@ function Staffnew() {
 		email: "",
 	});
 
-	const handleSubmit = async (e) => {
+	const [tempPass, setTempPass] = useState("");
+	const [error, setError] = useState({
+		username: false,
+		pass: false,
+	});
+
+const handleSubmit = async (e) => {
 		e.preventDefault();
-
-		axios
-			.post("http://localhost:8080/staffnew", staffData)
+		if (!(tempPass === staffData.password)) setError({ ...error, pass: true });
+		await axios
+			.post("http://localhost:8080/staffnew/staffnamecheck", staffData)
 			.then((res) => {
-				alert(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
+				console.log(res.data);
+				if (res.data === false) setError({ ...error, username: true });
 			});
-			setStaffData({
-				name: "",
-				userName: "",
-				password: "",
-				address: "",
-				phone: "",
-				email: ""
-			})
-	};
 
+		if (error.pass === false && error.username === false && staffData.password != "" && staffData.userName != "") {
+			axios.post("http://localhost:8080/staffnew/addstaff", staffData)
+			.then((res) => {navigate("/");});
+		}
+	};
 	return (
 		<>
 			<div className={styles.container}>
@@ -55,7 +57,7 @@ function Staffnew() {
 								<TextField
 									fullWidth
 									maxWidth="sm"
-									required
+									
 									id="outlined-required"
 									label="Full Name"
 									defaultValue=""
@@ -65,27 +67,23 @@ function Staffnew() {
 									}
 								/>
 							</div>
-							{/* <div className={styles.pw}>
-                                <TextField
-                                    fullWidth
-                                    maxWidth="sm"
-                                    required
-                                    id="outlined-required"
-                                    label="Last name"
-                                    defaultValue=""
-                                />
-                            </div> */}
+						
 							<div className={styles.pw}>
 								<TextField
 									fullWidth
 									maxWidth="sm"
-									required
+									
 									id="outlined-required"
 									label="Username"
 									defaultValue=""
+									error={error.username}
+									helperText={error.username ? "Username already taken" : "" }
 									value={staffData.userName}
 									onChange={(e) =>
+										{
 										setStaffData({ ...staffData, userName: e.target.value })
+										setError({ ...error, username: false });
+										}
 									}
 								/>
 							</div>
@@ -97,7 +95,8 @@ function Staffnew() {
 									label="Password"
 									type="password"
 									autoComplete="current-password"
-									required
+									error={staffData.password?false:true}
+									helperText={staffData.password?"":"Password is required."}
 									value={staffData.password}
 									onChange={(e) =>
 										setStaffData({ ...staffData, password: e.target.value })
@@ -112,7 +111,14 @@ function Staffnew() {
 									label="Confirm Password"
 									type="password"
 									autoComplete="current-password"
-									required
+									error={tempPass === staffData.password ? false : true}
+									helperText={
+										tempPass === staffData.password
+											? ""
+											: "Paswords Do Not Match"
+									}
+									value={tempPass}
+									onChange={(e) => setTempPass(e.target.value)}
 								/>
 							</div>
 							<div className={styles.pw}>

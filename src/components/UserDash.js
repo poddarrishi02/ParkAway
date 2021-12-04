@@ -7,16 +7,27 @@ import { Link } from 'react-router-dom'
 import Default from './Default';
 import MyBookings from './MyBookings';
 
-function UserDash() {
-    const [active, setactive] = useState(<BookSlot />);
+function UserDash({userData, setUserData, access, setAccess}) {
+    const [active, setactive] = useState(<BookSlot />);    
+    const handleClick = (e) => {
+        setAccess({...access, user: false});
+    }
+
+    React.useEffect(() => {
+        
+        console.log(userData);
+        localStorage.clear();
+        setAccess({...access, user: true});
+    },[])
+
     return (
         //     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        //   rel="stylesheet"></link>
+        //   rel="stylesheet"></link>        
         <div className={styles.outer}>
             <div className={styles.topNav}>
                 <div className={styles.navHead}>User</div>
                 <div className={styles.logout}>
-                    <Link to="/" style={{textDecoration:"none"}}><Button variant="outlined" startIcon={<LogoutIcon style={{ fill: "white" }} />} style={{ backgroundColor:"black" ,fontWeight: "bolder", fontFamily: 'Ubuntu', minWidth: "100%", color: "white", textTransform: "none", fontSize: "1.1em" }} >
+                    <Link to="/"  style={{textDecoration:"none"}}><Button variant="outlined" onClick={() => handleClick()} startIcon={<LogoutIcon style={{ fill: "white" }} />} style={{ backgroundColor:"black" ,fontWeight: "bolder", fontFamily: 'Ubuntu', minWidth: "100%", color: "white", textTransform: "none", fontSize: "1.1em" }} >
                         Logout
                     </Button></Link>
                 </div>

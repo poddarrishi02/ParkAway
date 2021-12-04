@@ -6,13 +6,13 @@ import styles from "../styles/otpVerif.module.css";
 // import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function OtpVerif() {
 	const [otp, setotp] = useState("");
 	const [verify, setVerify] = useState("");
 	const [userData, setUserData] = useState(JSON.parse(localStorage.getItem("userData")));
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	useEffect(() => {
         axios.post("http://localhost:8080/verify", userData.email).then((res) => {
@@ -34,7 +34,7 @@ function OtpVerif() {
 			localStorage.clear();
 			axios
 				.post("http://localhost:8080/usernew/adduser", userData)
-				.then((res) => {history.push("/");});
+				.then((res) => {navigate("/");});
 
 		} 
         else {

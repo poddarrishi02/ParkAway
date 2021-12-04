@@ -5,10 +5,10 @@ import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // Button
 function Usernew() {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const [userData, setUserData] = useState({
 		name: "",
 		userName: "",
@@ -35,7 +35,8 @@ function Usernew() {
 
 		if (error.pass === false && error.username === false && userData.password != "" && userData.userName != "") {
 			localStorage.setItem("userData", JSON.stringify(userData));
-			history.push("/verify");
+			// history.push("/verify");
+			navigate("/verify");
 		}
 	};
 

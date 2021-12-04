@@ -4,19 +4,32 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
 import axios from "axios";
-function Stafflogin() {
+// import { useHistory } from "react-router-dom";
+
+import { useNavigate } from 'react-router';
+
+function Stafflogin({access, setAccess}) {
 	const [staff, setStaff] = useState({ userName: "", password: "" });
+	const navigate = useNavigate();
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		axios
 			.post("http://localhost:8080/staff", staff)
 			.then((res) => {
-				alert(res.data);
+				if (res.data) {
+					setAccess({ ...access, staff: true });
+					// history.push("/dashboard");
+					console.log(staff.userName);
+					navigate("/dashboard");
+				}
+				else 
+				{
+					alert("Wrong Credentials !!! try again .... ");
+				}
 			})
 			.catch((err) => {
 				alert(err.response.data);
 			});
-		setStaff({ userName: "", password: "" });
 	};
 
 	return (
@@ -55,10 +68,7 @@ function Stafflogin() {
 								}
 							/>
 						</div>
-						<div className={styles.inputsRemember}>
-							<input type="checkbox" name="remember" id="remember"></input>
-							<label for="remember">Remember me</label>
-						</div>
+
 						<Button type="submit" variant="contained" className={styles.submit}>
 							Sign in
 						</Button>

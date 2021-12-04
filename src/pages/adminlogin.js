@@ -4,20 +4,26 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
-function Adminlogin({ access, setAcess }) {
-	const history = useHistory();
-	
+import { useNavigate } from "react-router-dom";
+
+function Adminlogin({ access, setAccess }) {
+	const navigate = useNavigate();
 
 	const [adminData, setAdminData] = useState({ userName: "", password: "" });
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		if ( !(adminData.userName === "") && !(adminData.password === "")) {
+		if (!(adminData.userName === "") && !(adminData.password === "")) {
 			axios
 				.post("http://localhost:8080/adminlogin", adminData)
 				.then((res) => {
-					setAcess({ ...access, admin: true });
-					history.push("/dashboard");
+					if(res.data == "Success") {
+					setAccess({ ...access, admin: true });
+					navigate("/dashboard");
+					}
+					else
+					{
+						alert("Invalid Credentials");
+					}
 				})
 				.catch((err) => {
 					alert(err.response.data);
@@ -64,10 +70,7 @@ function Adminlogin({ access, setAcess }) {
 								}
 							/>
 						</div>
-						<div className={styles.inputsRemember}>
-							<input type="checkbox" name="remember" id="remember"></input>
-							<label for="remember">Remember me</label>
-						</div>
+
 						<Button variant="contained" className={styles.submit} type="submit">
 							Sign in
 						</Button>

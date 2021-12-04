@@ -6,14 +6,23 @@ import { Link } from 'react-router-dom'
 import LogoutIcon from '@mui/icons-material/Logout';
 import Default from './Default';
 
-function AdminDash() {
+function AdminDash({access, setAccess}) {
     const [active, setactive] = useState(<AddWorker />);
+    const handleClick = (e) => {
+        setAccess({...access, admin: false});
+    }
+
+    React.useEffect(() => {
+        setAccess({...access, admin: true});
+    }, [])
+
+
     return (
         <div className={styles.outer}>
             <div className={styles.topNav}>
                 <div className={styles.navHead}>Admin</div>
                 <div className={styles.logout}>
-                    <Link to="/" style={{textDecoration:"none"}}><Button variant="outlined" startIcon={<LogoutIcon style={{ fill: "white" }} />} style={{ backgroundColor:"black" ,fontWeight: "bolder", fontFamily: 'Ubuntu', minWidth: "100%", color: "white", textTransform: "none", fontSize: "1.1em" }} >
+                    <Link to="/" style={{textDecoration:"none"}}><Button variant="outlined" onClick={(e) => handleClick(e)} startIcon={<LogoutIcon style={{ fill: "white" }} />} style={{ backgroundColor:"black" ,fontWeight: "bolder", fontFamily: 'Ubuntu', minWidth: "100%", color: "white", textTransform: "none", fontSize: "1.1em" }} >
                         Logout
                     </Button></Link>
                 </div>

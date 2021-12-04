@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Homepage from "./pages/homepage";
 import Userlogin from "./pages/userlogin";
 import Usernew from "./pages/usernew";
@@ -17,27 +17,32 @@ function App() {
 	});
 	return (
 		<Router>
-			<Switch>
-				<Route exact path="/" component={Homepage} />
-				<Route exact path="/user">
-					<Userlogin access={access} setAccess={setAccess} />
-				</Route>
-				<Route exact path="/adminlogin">
-					<Adminlogin access={access} setAccess={setAccess} />
-				</Route>
-				<Route exact path="/usernew">
-					<Usernew/>
-				</Route>
-				<Route exact path="/staff">
-					<Stafflogin access={access} setAccess={setAccess} />
-				</Route>
-				<Route exact path="/staffnew" component={Staffnew}>
-				</Route>
-				<Route exact path="/dashboard">
-					<Dashboard access={access} />
-				</Route>
-				<Route exact path="/verify" component={OtpVerif} />
-			</Switch>
+			<Routes>
+				<Route exact path="/" element={<Homepage />} />
+				<Route
+					exact
+					path="/user"
+					element={<Userlogin access={access} setAccess={setAccess} />}
+				/>
+				<Route
+					exact
+					path="/adminlogin"
+					element={<Adminlogin access={access} setAccess={setAccess} />}
+				/>
+				<Route exact path="/usernew" element={<Usernew />} />
+				<Route
+					exact
+					path="/staff"
+					element={<Stafflogin access={access} setAccess={setAccess} />}
+				></Route>
+				<Route exact path="/staffnew" element={<Staffnew />} ></Route>
+				<Route
+					exact
+					path="/dashboard"
+					element={<Dashboard access={access} setAccess={setAccess} />}
+				></Route>
+				<Route exact path="/verify" element={OtpVerif} />
+			</Routes>
 		</Router>
 	);
 }
