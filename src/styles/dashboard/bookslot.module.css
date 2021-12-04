@@ -1,4 +1,4 @@
-.outer{
+.outer,.outer2{
     height:80vh;
     width:80vw;
     display: flex;
@@ -32,4 +32,87 @@
 }
 .loc{
     width:15vw;
+}
+.outer2{
+    align-items: center;
+}
+.container{
+    /* width: 50vw; */
+    border: 1px solid black;
+}
+.btns{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    cursor: pointer;
+    min-width: fit-content;
+    text-align: center;
+    flex: 1;
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    /* padding: 1.1em; */
+    /* border-bottom: 2px solid blue ; */
+}
+.btn:hover{
+    text-decoration: underline;
+    text-decoration-color:gray; 
+    text-underline-offset: 5px;
+}
+.cards{
+    min-width: fit-content;
+    height: 70vh;
+    overflow-y: scroll;
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cards::-webkit-scrollbar{
+    width: 10px;
+}
+.cards::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.cards::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.cards::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+.cardlabel {
+    width: 100%;
+}
+
+.cardinputelement {
+    display: none;
+}
+
+.cardinput {
+    margin: 10px;
+    /* padding: 00px; */
+    display: flex;
+    /* margin-right: 30px; */
+    width: 30vw;
+    /* border: 1px solid  rgba(121, 121, 121, 0.253); */
+}
+
+.cardinput:hover {
+    cursor: pointer;
+}
+.cardinput:hover{
+    background-color: #dddddd;
+}
+.cardinputelement:checked + .cardinput {
+    /* box-shadow: 0 0 1px 1px #2ecc71; */
+    background-color: rgb(117,188,204);
 }

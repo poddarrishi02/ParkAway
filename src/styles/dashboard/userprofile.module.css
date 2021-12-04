@@ -3,6 +3,7 @@
     font-size: 3.5em;
     padding: 5vh;
     margin-bottom: 2vh;
+    color:;
 }
 .row{
     display: flex;
@@ -21,7 +22,7 @@
 }
 .outer{
     height: 90vh;
-    /* background-image: url(../../assets/profilebg.jpg); */
+    background-image: url(../../assets/profilebg.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
