@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    margin-right: 30px;
+    /* width: 25vw; */
+    border: 1px solid  rgba(121, 121, 121, 0.253);
+}
+.img{
+    margin: 20px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.wname{
+    margin-bottom: 10px;
+}
+.rating{
+    margin-bottom: 20px;
+}
+.addbtn{
+    margin-left: auto;
+    margin-right: 0;
+}
