@@ -49,7 +49,7 @@ function MyBookings() {
                                     label="Location"
                                 // onChange={handleChange}
                                 >
-                                    <MenuItem value={10}>A</MenuItem>
+                                    <MenuItem value={10}>North Pavi</MenuItem>
                                     <MenuItem value={20}>B</MenuItem>
                                     <MenuItem value={30}>C</MenuItem>
                                     <MenuItem value={30}>D</MenuItem>

@@ -59,7 +59,7 @@ function SelectSlot() {
                         </div>
                         <div className={styles.savebtn}>
                             <Button style={{ textTransform: "none", marginRight: "0", marginLeft: "50px" }}
-                                variant="contained" className={styles.save} onClick={saveChanges2}>
+                                variant="contained" className={styles.save} onClick={saveChanges1}>
                                 Save Changes
                             </Button>
                         </div>
