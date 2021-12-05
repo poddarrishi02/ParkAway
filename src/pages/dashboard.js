@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import AdminDash from '../components/AdminDash'
-import UserDash from '../components/UserDash';
-import WorkerDash from '../components/WorkerDash';
-import styles from '../styles/dashboard.module.css'
-function Dashboard() {
-    var isAdmin=true;
-    var isWorker=true;
-    // var isUser=false;
-    return (
-        <div className={styles.outer}>
-            {isAdmin?<AdminDash/>:isWorker?<WorkerDash/>:<UserDash/>}
-        </div>
-    )
-=======
 import axios from "axios";
 import React from "react";
 import AdminDash from "../components/AdminDash";
@@ -76,7 +60,6 @@ function Dashboard({ access, setAccess }) {
 			)}
 		</div>
 	);
->>>>>>> 85324acf53760a9c31c54c6fc81783aae74132f2
 }
 
 export default Dashboard;
