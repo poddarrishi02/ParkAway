@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/stafflogin.module.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import { Link } from 'react-router-dom';
 function Adminlogin() {
     return (
         <>
@@ -40,6 +41,9 @@ function Adminlogin() {
                     </div>
                     <div className={styles.breakLine}>
                     </div>
+                    <div className={styles.reg}>
+            <Link to="/usernew" style={{textDecoration:"none"}}><a href="#" >Back To Homepage</a></Link>
+          </div>
                 </form>
             </div>
             </div>

@@ -40,7 +40,7 @@ function Homepage() {
                         <div className={styles.icons}>
                             <div className={styles.icon}>
                                 <img className={styles.image} src={img1}></img>
-                                <Link to="/admin" style={{ textDecoration: "none" }}><Button variant="contained" className={styles.submit}>Admin</Button></Link>
+                                <Link to="/adminlogin" style={{ textDecoration: "none" }}><Button variant="contained" className={styles.submit}>Admin</Button></Link>
                             </div>
                             <div className={styles.icon}>
                                 <img className={styles.image} src={img2}></img>
