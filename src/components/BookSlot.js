@@ -26,14 +26,17 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 // export default function MaterialUIPickers() {
 //     const [value, setValue] = React.useState(new Date('2014-08-18T21:11:54'));
 
-//     const handleChange = (newValue) => {
-//       setValue(newValue);
-//     };
 function MyBookings() {
-    const [value, setValue] = useState(new Date('2021-12-06T21:11:54'));
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = dd + '/' + mm + '/' + yyyy;
+    const [value, setValue] = useState(new Date('2021-12-06T12:11:54'));
+    const [value2, setValue2] = useState(new Date('2021-12-07T14:11:54'));
     const [booking, setBooking] = useState({
         dry_cleaning: {
-            username:""
+            username: ""
         },
         washing: {
             username: ""
@@ -41,18 +44,35 @@ function MyBookings() {
         repairing: {
             username: ""
         },
-        date: {value},
+        date: { value },
 
     })
-    const [active, setactive] = useState(3);
+    const [active, setactive] = useState(2);
+    const [dryid, setdryid] = useState(-1);
+    const [washid, setwashid] = useState(-1);
+    const [repairid, setrepairid] = useState(-1);
     // const [service, setservice] = useState(1);
     // const [workerData, setworkerData] = useState(workerData1);
     // const [dryclean, setdryclean] = useState([]);
     // const [activeServices, setactiveServices] = useState([0, 0, 0]);
     // const [serviceProviders, setserviceProviders] = useState(["", "", ""]);
+    const [location, setlocation] = useState("North Pavilion");
+    const [date, setdate] = useState(today);
+    const locations = ["North Pavilion", "East Pavilion", "South Pavilion", "West Pavilion"];
     const handleChange = (newValue) => {
         setValue(newValue);
+        console.log(value);
     };
+    const handleChange2 = (newValue) => {
+        setValue(newValue);
+        console.log(value2);
+    };
+    function getTextFromHTML(htmlText) {
+        var temp = document.createElement("div");
+        var html = temp.innerHTML = htmlText;
+        var text = temp.textContent;
+        return text;
+    }
     return (
         <>
             {active == 1 && <div className={styles.outer}>
@@ -62,21 +82,23 @@ function MyBookings() {
                         <LocalizationProvider dateAdapter={AdapterDateFns}>
                             <FormControl className={styles.loc}>
                                 <InputLabel id="demo-simple-select-label">Location</InputLabel>
+
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     label="Location"
-                                // onChange={handleChange}
+                                    value={location}
+                                    onChange={(e) => { setlocation(e.target.value) }}
                                 >
-                                    <MenuItem value={10}>North Pavi</MenuItem>
-                                    <MenuItem value={20}>B</MenuItem>
-                                    <MenuItem value={30}>C</MenuItem>
-                                    <MenuItem value={40}>D</MenuItem>
+                                    {locations.map(x => {
+                                        return (
+                                            <MenuItem value={x}>{x}</MenuItem>)
+                                    })};
                                 </Select>
                             </FormControl>
                             <DesktopDatePicker
                                 label="Date"
-                                inputFormat="MM/dd/yyyy"
+                                inputFormat="dd/MM/yyyy"
                                 value={value}
                                 onChange={handleChange}
                                 renderInput={(params) => <TextField {...params} />}
@@ -89,8 +111,8 @@ function MyBookings() {
                             />
                             <TimePicker
                                 label="Check-out Time"
-                                value={value}
-                                onChange={handleChange}
+                                value={value2}
+                                onChange={handleChange2}
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
@@ -118,11 +140,17 @@ function MyBookings() {
                             <button className={styles.btn} style={service==3 &&{textDecoration:"underline", textDecorationColor:"red",  textUnderlineOffset:"5px"}} onClick={() => { setservice(3) ;setworkerData(workerData3)}}>Repairing</button>
                         </div> */}
                             <div className={styles.cards}>
-                                {workerData1.map(x => {
+                                {workerData1.map((x, id) => {
                                     return (
                                         <label className={styles.cardlabel}>
-                                            <input type="radio" name="dryclean" className={styles.cardinputelement} />
-                                            <div className={styles.cardinput} >
+                                            <input type="radio" name="dryclean" className={styles.cardinputelement}
+                                                onClick={(e) => {
+                                                    console.log(e.target.parentElement.children[1].id);
+                                                    var x = e.target.parentElement.children[1].id;
+                                                    setdryid(x);
+                                                }}
+                                            />
+                                            <div className={styles.cardinput} id={id}>
                                                 <div className={cstyles.imgdiv}>
                                                     <Avatar src="/broken-image.jpg" className={cstyles.img} sx={{ height: '100px', width: '100px' }} />
                                                 </div>
@@ -139,10 +167,16 @@ function MyBookings() {
                         <div className={styles.container}>
                             <h2 className={styles.serviceheading}>Washing - Rs. 60</h2>
                             <div className={styles.cards}>
-                                {workerData2.map(x => {
+                                {workerData2.map((x, id) => {
                                     return (
                                         <label className={styles.cardlabel}>
-                                            <input type="radio" name="wash" className={styles.cardinputelement} />
+                                            <input type="radio" name="wash" className={styles.cardinputelement}
+                                                onClick={(e) => {
+                                                    console.log(e.target.parentElement.children[1].id);
+                                                    var x = e.target.parentElement.children[1].id;
+                                                    setwashid(x);
+                                                }}
+                                            />
                                             <div className={styles.cardinput}>
                                                 <div className={cstyles.imgdiv}>
                                                     <Avatar src="/broken-image.jpg" className={cstyles.img} sx={{ height: '100px', width: '100px' }} />
@@ -160,10 +194,16 @@ function MyBookings() {
                         <div className={styles.container}>
                             <h2 className={styles.serviceheading}>Repairing - Rs. 100</h2>
                             <div className={styles.cards}>
-                                {workerData3.map(x => {
+                                {workerData3.map((x, id) => {
                                     return (
                                         <label className={styles.cardlabel}>
-                                            <input type="radio" name="repair" className={styles.cardinputelement} />
+                                            <input type="radio" name="repair" className={styles.cardinputelement}
+                                                onClick={(e) => {
+                                                    console.log(e.target.parentElement.children[1].id);
+                                                    var x = e.target.parentElement.children[1].id;
+                                                    setrepairid(x);
+                                                }}
+                                            />
                                             <div className={styles.cardinput}>
                                                 <div className={cstyles.imgdiv}>
                                                     <Avatar src="/broken-image.jpg" className={cstyles.img} sx={{ height: '100px', width: '100px' }} />
@@ -216,19 +256,19 @@ function MyBookings() {
                     </div>
                     <div className={styles.tableouter}>
                         <div className={styles.leftable}>
-                            <div className={styles.confirm}><CheckCircleIcon sx={{fontSize:"1.2em",fill:"green"}}/> Complete Your Booking </div>
-                        <div className={styles.breakLine}>
-                            <div className={styles.intable}>
-                                <div className={styles.inleft}>
-                                    <div className={styles.leftH}>
-                                        Additional Services
+                            <div className={styles.confirm}><CheckCircleIcon sx={{ fontSize: "1.2em", fill: "green" }} /> Complete Your Booking </div>
+                            <div className={styles.breakLine}>
+                                <div className={styles.intable}>
+                                    <div className={styles.inleft}>
+                                        <div className={styles.leftH}>
+                                            Additional Services
+                                        </div>
+                                    </div>
+                                    <div className={styles.inright}>
+
                                     </div>
                                 </div>
-                                <div className={styles.inright}>
-
-                                </div>
                             </div>
-                        </div>
                         </div>
                         <div className={styles.rightable}>
                             <div className={styles.summary}>
@@ -257,7 +297,7 @@ function MyBookings() {
                             <div className={styles.breakLine}>
                             </div>
                             <div className={styles.btn}>
-                            <Button sx={{backgroundColor:"rgb(48,79,254)"}} style={{height:"5vh",width:"27vw"}} variant="contained" className={styles.submit}><div className={styles.pay}>Complete Payment</div></Button>
+                                <Button sx={{ backgroundColor: "rgb(48,79,254)" }} style={{ height: "5vh", width: "27vw" }} variant="contained" className={styles.submit}><div className={styles.pay}>Complete Payment</div></Button>
                             </div>
                         </div>
                     </div>
