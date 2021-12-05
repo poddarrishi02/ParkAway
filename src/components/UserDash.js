@@ -37,7 +37,7 @@ function UserDash({userData, setUserData, access, setAccess}) {
                 <div className={styles.leftNav}>
                     <div className={styles.dashTop}>
                         <Button onClick={() => {
-                            setactive(<BookSlot />)
+                            setactive(<BookSlot userData={userData} />)
                         }} variant="text" style={{ fontWeight: "bolder", fontFamily: "Ubuntu", minWidth: "100%", justifyContent: "flex-start", color: "white", textTransform: "none", fontSize: "1.1em" }}
                             sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Book a Slot</Button>
                     </div>

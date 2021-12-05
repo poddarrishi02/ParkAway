@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import {Link} from "react-router-dom";
 function Adminlogin({ access, setAccess }) {
 	const navigate = useNavigate();
 
@@ -77,7 +77,7 @@ function Adminlogin({ access, setAccess }) {
 					</div>
 					<div className={styles.breakLine}></div>
 					<div className={styles.reg}>
-            <Link to="/usernew" style={{textDecoration:"none"}}><a href="#" >Back To Homepage</a></Link>
+            <Link to="/" style={{textDecoration:"none"}}><a href="#" >Back To Homepage</a></Link>
              </div>
 				</form>
 			</div>
