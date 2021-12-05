@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useWindowSize } from "react-hooks-window-size";
 import styles from '../styles/homepage.module.css'
 import img1 from "../assets/adminlogo.png"
@@ -14,6 +14,7 @@ import "../components/homepage/homepage_animation.js";
 import { canvasDots } from "../components/homepage/homepage_animation.js";
 import { particles } from "../components/homepage/homepage_paricles";
 import "../components/homepage/homepage_animation.js";
+import '../styles/homepageanimation.css'
 function Homepage() {
     const size = useWindowSize(1500, 1500);
     useEffect(() => {
@@ -35,7 +36,7 @@ function Homepage() {
                 <div className={styles.container}>
                     <form className={styles.boxForm} action="/" method="get">
                         <div className={styles.heading}>
-                            <h2>Login as</h2>
+                            Login as
                         </div>
                         <div className={styles.icons}>
                             <div className={styles.icon}>
@@ -61,6 +62,42 @@ function Homepage() {
                 </div> */}
             </div>
             <canvas className="dots" />
+            <div class="country-wrap">
+                <div class="street">
+                    <div class="car">
+                        <div class="car-body">
+                            <div class="car-top-back">
+                                <div class="back-curve"></div>
+                            </div>
+                            <div class="car-gate"></div>
+                            <div class="car-top-front">
+                                <div class="wind-sheild"></div>
+                            </div>
+                            <div class="bonet-front"></div>
+                            <div class="stepney"></div>
+                        </div>
+                        <div class="boundary-tyre-cover">
+                            <div class="boundary-tyre-cover-back-bottom"></div>
+                            <div class="boundary-tyre-cover-inner"></div>
+                        </div>
+                        <div class="tyre-cover-front">
+                            <div class="boundary-tyre-cover-inner-front"></div>
+                        </div>
+                        <div class="base-axcel">
+                        </div>
+                        <div class="front-bumper"></div>
+                        <div class="tyre">
+                            <div class="gap"></div>
+                        </div>
+                        <div class="tyre front">
+                            <div class="gap"></div>
+                        </div>
+                        <div class="car-shadow"></div>
+                    </div>
+                </div>
+                <div class="street-stripe"></div>
+            </div>
+            {/* </div> */ }
         </>
     )
 }

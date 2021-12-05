@@ -76,10 +76,12 @@ function Adminlogin({ access, setAccess }) {
 						</Button>
 					</div>
 					<div className={styles.breakLine}></div>
+					<div className={styles.reg}>
+            <Link to="/usernew" style={{textDecoration:"none"}}><a href="#" >Back To Homepage</a></Link>
+             </div>
 				</form>
 			</div>
 		</>
 	);
-}
-
+							}
 export default Adminlogin;

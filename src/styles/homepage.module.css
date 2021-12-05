@@ -12,7 +12,7 @@ canvas {
     z-index: 1;
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     top: 0;
     right: 0;
     left: 0;
@@ -24,7 +24,6 @@ canvas {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .outer {
@@ -67,21 +66,26 @@ canvas {
 .container {
     min-width: 25em;
     padding: 1.2em;
-    margin-top: 8vh;
+    margin-top: 4vh;
     border-radius: 20px;
     background-color: rgb(34, 34, 34);
     z-index: 10;
 }
+.container{
+    position: relative;
+    bottom: 1vh;
+}
 .title
 {
-    font-size: 3.5em;
+    font-size: 5em;
     font-weight: bolder;
+    margin-bottom: 1vh;
 }
 .boxForm {
     box-sizing: border-box;
     /* min-width: 24em; */
-    width: 40vw;
-    padding: 3em 1.1em;
+    width: 37vw;
+    padding: 1.8em 1.1em;
     padding-left: 1.5em;
     padding-right: 1.5em;
     border-radius: 10px;
@@ -90,11 +94,16 @@ canvas {
     flex-direction: column;
     z-index: 10;
 }
-
+.outer{
+    position: relative;
+    bottom: 5vh;
+}
 .heading {
     padding-top: 25px;
     font-size: 1.5em;
-    color: rgb(68, 68, 68);
+    /* color: rgb(68, 68, 68); */
+    font-weight: bold;
+    font-size: 3em;
 }
 
 .breakLine {
@@ -110,22 +119,25 @@ canvas {
 .icons {
     display: flex;
     align-items: center;
-    margin: 2em;
+    margin: 1.3em;
 }
 
 .icon {
-    display: flex;
+    width: 5vw;
     flex-direction: column;
     align-items: center;
-    /* margin: 1.1em; */
+    flex: 1;
+    display: flex;
+    margin: 1.1em;
     margin-left: 3em;
     margin-right: 3em;
     margin-top: 2em;
 }
 
 .image {
-    height: 10vh;
+    height: 12vh;
     width: auto;
+    object-fit: cover;
 }
 
 @media (max-width: 650px) {
