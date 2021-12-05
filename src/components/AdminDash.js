@@ -11,12 +11,9 @@ function AdminDash({access, setAccess}) {
     const handleClick = (e) => {
         setAccess({...access, admin: false});
     }
-
     React.useEffect(() => {
         setAccess({...access, admin: true});
     }, [])
-
-
     return (
         <div className={styles.outer}>
             <div className={styles.topNav}>

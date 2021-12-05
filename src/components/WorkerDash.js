@@ -15,10 +15,8 @@ function WorkerDash({staffData, setStaffData, access, setAccess}) {
     }
 
     React.useEffect(() => {
-        setStaffData(JSON.parse(localStorage.getItem('staff')));
         localStorage.clear();
-        setAccess({...access, staff: true});
-        
+        setAccess({...access, staff: true});        
     }, [])
 
 
@@ -44,7 +42,7 @@ function WorkerDash({staffData, setStaffData, access, setAccess}) {
                     </div>
                     <div className={styles.dashItems}>
                         <Button onClick={() => {
-                            setactive(<SelectSlot staffData={staffData} />)
+                            setactive(<SelectSlot staffData={staffData} setStaffData={setStaffData} />)
                         }} variant="text" style={{ fontWeight: "bolder", fontFamily: "Ubuntu", minWidth: "100%", justifyContent: "flex-start", color: "white", textTransform: "none", fontSize: "1.1em" }}
                             sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Select Services/Slots </Button>
                     </div>

@@ -17,7 +17,6 @@ function Dashboard({ access, setAccess }) {
 					setUserData(res.data);
 					localStorage.clear();
 					localStorage.setItem("user", res.data);
-					console.log(userData);
 ;				})
 				.catch((err) => {
 					console.log(err);
@@ -28,8 +27,7 @@ function Dashboard({ access, setAccess }) {
 				.then((res) => {
 					setStaffData(res.data);
 					localStorage.clear();
-					localStorage.setItem("user", JSON.stringify(res.data));
-					console.log(res.data);
+					localStorage.setItem("staff", JSON.stringify(res.data));
 				})
 				.catch((err) => {
 					console.log(err);

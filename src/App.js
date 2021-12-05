@@ -41,7 +41,7 @@ function App() {
 					path="/dashboard"
 					element={<Dashboard access={access} setAccess={setAccess} />}
 				></Route>
-				<Route exact path="/verify" element={OtpVerif} />
+				<Route exact path="/verify" element={<OtpVerif />} />
 			</Routes>
 		</Router>
 	);

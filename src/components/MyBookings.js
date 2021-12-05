@@ -7,16 +7,21 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Default from './Default';
+import axios from 'axios';
+function MyBookings({userData}) {
 
-function MyBookings() {
-    const bookingsInitial = [{ loc: "A", date:"20/12/2021",inTime: "09:10am",outTime:"10:10am", cost:"$10",status: "Booking Confirmed" }, { loc: "B",date:"30/12/2021",inTime: "10:00pm", outTime: "11:30pm", cost:"$30",status: "Booking Confirmed" }, { loc: "C",date:"28/12/2021", inTime: "09:00am", outTime: "10:00pm",cost:"$40", status: "Booking Confirmed" }];
+    const [booking, setbooking] = useState([]);
+    React.useEffect(()=> {
+        axios.post("http://localhost:8080/user/viewBookings", userData.userName ).then((res) => {
+            setbooking(res.data);
+        })} , [] );
+
     // const bookingsInitial = [];
-    const [booking, setbooking] = useState(bookingsInitial);
     return (
         <div className={styles.outer}>
             <div className={styles.title}>My Bookings</div>
             <div className={styles.manage}>
-                {booking.length==0?<div className={styles.nobooking}>No bookings</div>:
+                {booking.length==0 ? <div className={styles.nobooking}>No bookings</div>:
                 <table>
                     <thead>
                         <th className={styles.tablehead}>Location</th>
@@ -35,7 +40,7 @@ function MyBookings() {
                                     <td className={styles.tablerows} data-label="inTime">{w.inTime}</td>
                                     <td className={styles.tablerows} data-label="outTime">{w.outTime}</td>
                                     <td className={styles.tablerows} data-label="cost">{w.cost}</td>
-                                    <td className={styles.status} data-label="status">{w.status}</td>
+                                    <td className={styles.status} data-label="status">{w.payment? "Booking Confirmed" : "Booking Awaited"}</td>
                                 </tr>);
                         })}
                     </tbody>

@@ -28,7 +28,7 @@ function Stafflogin({access, setAccess}) {
 				}
 			})
 			.catch((err) => {
-				alert(err.response.data);
+				alert(err);
 			});
 	};
 

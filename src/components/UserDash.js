@@ -43,7 +43,7 @@ function UserDash({userData, setUserData, access, setAccess}) {
                     </div>
                     <div className={styles.dashItems}>
                         <Button onClick={() => {
-                            setactive(<MyBookings />)
+                            setactive(<MyBookings userData={userData} />)
                         }} variant="text" style={{ fontWeight: "bolder", fontFamily: "Ubuntu", minWidth: "100%", justifyContent: "flex-start", color: "white", textTransform: "none", fontSize: "1.1em" }}
                             sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>View My Bookings</Button>
                     </div>
