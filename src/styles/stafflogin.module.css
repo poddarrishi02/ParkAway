@@ -8,7 +8,6 @@
     font-family: "Ubuntu";
 }
 
-
 .container,
 .boxForm,
 .socials {
@@ -27,9 +26,9 @@
 }
 
 .container {
-    min-width: 25em;
+    min-width: 24em;
     padding: 1.2em;
-
+margin-bottom: 4vh;
     border-radius: 20px;
     background-color: rgb(34, 34, 34);
 }
@@ -37,7 +36,7 @@
 /* box's*/
 
 .boxForm {
-    min-width: 24em;
+    min-width: 23em;
 
     padding: 2.2em 1.1em;
     border-radius: 10px;
@@ -46,7 +45,7 @@
 }
 
 .heading {
-    padding: 25px;
+    padding: 15px;
     font-size: 1.5em;
     color: rgb(68, 68, 68);
 }
@@ -58,13 +57,13 @@
 }
 
 .pw {
-    margin-top: 2em;
-    margin-bottom: 1.05em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     /* margin-left: 0; */
 }
 
 .reg {
-    margin-top: 2em;
+    margin-top: 1.9em;
     /* align-self: flex-start; */
 }
 

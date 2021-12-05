@@ -1,0 +1,21 @@
+.car {
+	-moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+-ms-transform: scale(-1, 1);
+transform: scale(-1, 1);
+}
+@keyframes myfirst{
+    100% {right:100%;}
+	0%   {right:-25%;}
+}
+@-moz-keyframes myfirst 
+{
+    100% {right:100%;}
+	0%   {right:-25%;}
+} 
+@-webkit-keyframes myfirst
+{
+	100% {right:100%;}
+	0%   {right:-25%;}
+}

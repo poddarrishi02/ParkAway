@@ -4,7 +4,7 @@ import UserDash from '../components/UserDash';
 import WorkerDash from '../components/WorkerDash';
 import styles from '../styles/dashboard.module.css'
 function Dashboard() {
-    var isAdmin=false;
+    var isAdmin=true;
     var isWorker=true;
     // var isUser=false;
     return (

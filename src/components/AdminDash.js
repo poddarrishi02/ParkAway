@@ -30,12 +30,6 @@ function AdminDash() {
                     </div>
                     <div className={styles.dashItems}>
                     <Button onClick={() => {
-                                        setactive(<AddWorker />)
-                                    }} variant="text" style={{ fontWeight:"bolder",fontFamily:"Ubuntu",minWidth:"100%",justifyContent: "flex-start", color: "white", textTransform: "none",fontSize: "1.1em"  }}
-                                        sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Manage Parking Slots</Button>
-                    </div>
-                    <div className={styles.dashItems}>
-                    <Button onClick={() => {
                                         setactive(<ManageCars />)
                                     }} variant="text" style={{ fontWeight:"bolder",fontFamily:"Ubuntu",minWidth:"100%",justifyContent: "flex-start", color: "white", textTransform: "none",fontSize: "1.1em"  }}
                                         sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Manage Cars</Button>

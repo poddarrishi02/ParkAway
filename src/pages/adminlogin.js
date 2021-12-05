@@ -2,6 +2,8 @@ import React from 'react'
 import styles from '../styles/stafflogin.module.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import "../styles/homepageanimation.css"
+import "../styles/homepageanimation2.css"
 import { Link } from 'react-router-dom';
 function Adminlogin() {
     return (
@@ -33,10 +35,6 @@ function Adminlogin() {
                                     autoComplete="current-password"
                                 />
                             </div>
-                            <div className={styles.inputsRemember}>
-                                <input type="checkbox" name="remember" id="remember" ></input>
-                                <label for="remember">Remember me</label>
-                            </div>
                             <Button variant="contained" className={styles.submit}>Sign in</Button>
                         </div>
                         <div className={styles.breakLine}>
@@ -46,6 +44,41 @@ function Adminlogin() {
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="country-wrap">
+                <div class="street">
+                    <div class="car">
+                        <div class="car-body">
+                            <div class="car-top-back">
+                                <div class="back-curve"></div>
+                            </div>
+                            <div class="car-gate"></div>
+                            <div class="car-top-front">
+                                <div class="wind-sheild"></div>
+                            </div>
+                            <div class="bonet-front"></div>
+                            <div class="stepney"></div>
+                        </div>
+                        <div class="boundary-tyre-cover">
+                            <div class="boundary-tyre-cover-back-bottom"></div>
+                            <div class="boundary-tyre-cover-inner"></div>
+                        </div>
+                        <div class="tyre-cover-front">
+                            <div class="boundary-tyre-cover-inner-front"></div>
+                        </div>
+                        <div class="base-axcel">
+                        </div>
+                        <div class="front-bumper"></div>
+                        <div class="tyre">
+                            <div class="gap"></div>
+                        </div>
+                        <div class="tyre front">
+                            <div class="gap"></div>
+                        </div>
+                        <div class="car-shadow"></div>
+                    </div>
+                </div>
+                <div class="street-stripe"></div>
             </div>
         </>
     )
