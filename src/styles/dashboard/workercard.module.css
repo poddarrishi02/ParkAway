@@ -25,3 +25,11 @@
     margin-left: auto;
     margin-right: 0;
 }
+.cardinput3{
+    min-width: fit-content;
+}
+.wname3{
+    min-width: fit-content;
+    font-size: 1.5em;
+    white-space: nowrap;
+}

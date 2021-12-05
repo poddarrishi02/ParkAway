@@ -7,6 +7,7 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import TextField from '@mui/material/TextField';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 import Button from '@mui/material/Button';
+import DoneIcon from '@mui/icons-material/Done';
 import { Link } from 'react-router-dom';
 import AddWorker from './AddWorker';
 import InputLabel from '@mui/material/InputLabel';
@@ -33,7 +34,7 @@ function MyBookings() {
     const [value, setValue] = useState(new Date('2021-12-06T21:11:54'));
     const [booking, setBooking] = useState({
         dry_cleaning: {
-            username:""
+            username: ""
         },
         washing: {
             username: ""
@@ -41,7 +42,7 @@ function MyBookings() {
         repairing: {
             username: ""
         },
-        date: {value},
+        date: { value },
 
     })
     const [active, setactive] = useState(3);
@@ -108,7 +109,7 @@ function MyBookings() {
             </div >}
             {active == 2 &&
                 <div className={styles.outer2}>
-                    <h1 className={styles.addon}>Additional Services(Optional)</h1>
+                    <h1 className={styles.addon}>Additional Services (Optional)</h1>
                     <div className={styles.containers}>
                         <div className={styles.container}>
                             <h2 className={styles.serviceheading}>Dry cleaning - Rs. 50</h2>
@@ -203,32 +204,167 @@ function MyBookings() {
             {active == 3 &&
                 <div className={styles.outer3}>
                     <div className={styles.out}>
-                        <div className={styles.revertbtn2}>
-                            <Button onClick={() => {
-                                setactive(2)
-                            }}
-                                variant="contained" startIcon={<ArrowBackIcon style={{ fill: "white" }}
-                                />}>
-                                Revert
-                            </Button>
-                        </div>
+                        
                         <div className={styles.addon}>Confirm Booking</div>
                     </div>
                     <div className={styles.tableouter}>
                         <div className={styles.leftable}>
-                            <div className={styles.confirm}><CheckCircleIcon sx={{fontSize:"1.2em",fill:"green"}}/> Complete Your Booking </div>
-                        <div className={styles.breakLine}>
-                            <div className={styles.intable}>
-                                <div className={styles.inleft}>
-                                    <div className={styles.leftH}>
+                            <div className={styles.confirm}><CheckCircleIcon sx={{ fontSize: "1.2em", fill: "green" }} /> Complete Your Booking </div>
+                            <div className={styles.breakLin}>
+                            </div>
+                            <div className={styles.head}>
+                                
+                            
+                            {/* <div className={styles.parkinfo}>
+                            <div className={styles.park}>Parking Slot Booked!</div> */}
+                            {/* <div className={styles.divv}>
+                            <div className={styles.park}>Location:A </div><div className={styles.park}>Date:xxxxx</div>
+                            </div>
+                            <div className={styles.divv}>
+                            <div className={styles.park}>Check-In:A </div><div className={styles.park}>Check-Out:xxxxx</div>
+                            </div> */}
+                            {/* </div> */}
+                            {/* <div className={styles.park}>Check-in Time:xxxx Check-Out Time:xxxx</div>
+                            </div> */}
+                            {/* <div className={styles.breakLine}>
+                            </div> */}
+                            <div className={styles.avail}>
+                                Additional Services Availed
+                            </div>
+                            
+                            <table className={styles.inleftable}>
+
+                            <tr>
+                                <th>Service</th>
+                                <th >Staff</th>
+                                <th >Cost</th>
+                            </tr>
+                            <tr >
+                                <td >Dry Cleaning</td>
+                                <td >Raju</td>
+                                <td >Rs 350</td>
+                            </tr>
+                            <tr >
+                                <td >Washing</td>
+                                <td >Sharma</td>
+                                <td >Rs 150</td>
+                            </tr>
+                            <tr >
+                                <td >Repairing</td>
+                                <td >Sohan</td>
+                                <td >Rs 45</td>
+                            </tr>
+                            {/* <div className={styles.breakLine}>
+                            </div> */}
+                            {/* <div className={styles.breakLine}>
+                            </div> */}
+                            </table>
+                        </div>
+                        
+                            {/* <div className={styles.intable}>
+                                
+                                    <div className={styles.incol}>
+                                        <div className={styles.inrow}>
                                         Additional Services
                                     </div>
-                                </div>
-                                <div className={styles.inright}>
+                                    <div className={styles.inrow1}>
+                                        <DoneIcon/> Dry Cleaning
+                                    </div>
+                                    <div className={styles.inrow1}>
+                                    <DoneIcon/> Washing
+                                    </div>
+                                    <div className={styles.inrow1}>
+                                    <DoneIcon/> Repairing
+                                    </div>
+                                    </div>
+                                    <div className={styles.incol}>
+                                        <div className={styles.inrow}>
+                                        Staff
+                                    </div>
+                                    <div className={styles.inrow}>
+                                    <div className={styles.cardinput33}>
+                                            <div className={cstyles.imgdiv3}>
+                                                <Avatar src="/broken-image.jpg" className={cstyles.img} sx={{ height: '100px', width: '100px' }} />
+                                            </div>
+                                            <div className={cstyles.details3}>
+                                                <h1 className={cstyles.wname3}>Ankit Labour</h1>
+                                                <Rating name="half-rating-read" defaultValue={3.8} precision={0.5} readOnly className={cstyles.rating3} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={styles.inrow}>
+                                    <div className={styles.cardinput33}>
+                                            <div className={cstyles.imgdiv3}>
+                                                <Avatar src="/broken-image.jpg" className={cstyles.img} sx={{ height: '100px', width: '100px' }} />
+                                            </div>
+                                            <div className={cstyles.details3}>
+                                                <h1 className={cstyles.wname3}>Ankit Labour</h1>
+                                                <Rating name="half-rating-read" defaultValue={3.8} precision={0.5} readOnly className={cstyles.rating3} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={styles.inrow}>
+                                    <div className={styles.cardinput33}>
+                                            <div className={cstyles.imgdiv3}>
+                                                <Avatar src="/broken-image.jpg" className={cstyles.img} sx={{ height: '100px', width: '100px' }} />
+                                            </div>
+                                            <div className={cstyles.details3}>
+                                                <h1 className={cstyles.wname3}>Ankit Labour</h1>
+                                                <Rating name="half-rating-read" defaultValue={3.8} precision={0.5} readOnly className={cstyles.rating3} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                
+                            </div> */}
+                            {/* <table className={styles.intable}>
+                                <tr className={styles.inrow}>
+                                    <th className={styles.incol}>
+                                        Additional Services
+                                    </th>
+                                    <th className={styles.incol}>
+                                        Staff
+                                    </th>
+                                </tr>
+                                <tr className={styles.inrow}>
+                                    <div className={styles.rowdiv}>
+                                        <td className={styles.incol}>
+                                            Dry Cleaning
+                                        </td>
+                                    </div>
+                                    <td className={styles.incol}>
+                                        <div className={styles.cardinput3}>
+                                            <div className={cstyles.imgdiv3}>
+                                                <Avatar src="/broken-image.jpg" className={cstyles.img} sx={{ height: '100px', width: '100px' }} />
+                                            </div>
+                                            <div className={cstyles.details3}>
+                                                <h1 className={cstyles.wname3}>Ankit Labour</h1>
+                                                <Rating name="half-rating-read" defaultValue={3.8} precision={0.5} readOnly className={cstyles.rating3} />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr className={styles.inrow}>
+                                    <div className={styles.rowdiv}>
+                                        <td className={styles.incol}>
+                                            Washing
+                                        </td>
+                                    </div>
+                                    <td className={styles.incol1}>
+                                        <div className={styles.cardinput3}>
+                                            <div className={cstyles.imgdiv3}>
+                                                <Avatar src="/broken-image.jpg" className={cstyles.img} sx={{ height: '100px', width: '100px' }} />
+                                            </div>
+                                            <div className={cstyles.details3}>
+                                                <h1 className={cstyles.wname3}>MK Labour</h1>
+                                                <Rating name="half-rating-read" defaultValue={4.3} precision={0.5} readOnly className={cstyles.rating3} />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                            </table> */}
 
-                                </div>
-                            </div>
-                        </div>
                         </div>
                         <div className={styles.rightable}>
                             <div className={styles.summary}>
@@ -257,10 +393,21 @@ function MyBookings() {
                             <div className={styles.breakLine}>
                             </div>
                             <div className={styles.btn}>
-                            <Button sx={{backgroundColor:"rgb(48,79,254)"}} style={{height:"5vh",width:"27vw"}} variant="contained" className={styles.submit}><div className={styles.pay}>Complete Payment</div></Button>
+                                <Button sx={{ backgroundColor: "rgb(48,79,254)" }} style={{ height: "5vh", width: "27vw" }} variant="contained" className={styles.submit}><div className={styles.pay}>Complete Payment</div></Button>
                             </div>
                         </div>
                     </div>
+                    <div className={styles.revpos}>
+                    <div className={styles.revbtn}>
+                            <Button onClick={() => {
+                                setactive(2)
+                            }}
+                                variant="contained" startIcon={<ArrowBackIcon style={{ fill: "white" }}
+                                />}>
+                                Revert
+                            </Button>
+                        </div>
+                        </div>
                 </div>
             }
         </>
