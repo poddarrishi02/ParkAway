@@ -5,7 +5,7 @@ import styles from '../styles/dashboard/staffprofile.module.css'
 import Avatar from '@mui/material/Avatar';
 import Rating from '@mui/material/Rating';
 
-function StaffProfile() {
+function StaffProfile({staffData}) {
     let name= "Ram";
     return (
         <div className={styles.outer}>
@@ -17,19 +17,20 @@ function StaffProfile() {
             <div className={styles.details}>
 
             <div className={styles.row}>
-            <div className={styles.fieldName}>Name :</div> <div className={styles.content}>Ram Kumar</div>
+            <div className={styles.fieldName}>Name :</div> <div className={styles.content}>{staffData.name}</div>
             </div>
             
             <div className={styles.row}>
-            <div className={styles.fieldName}>Username :</div> <div className={styles.content}>ram</div>
+            <div className={styles.fieldName}>Username :</div> <div className={styles.content}>{staffData.userName}</div>
             </div>
             
             <div className={styles.row}>
-            <div className={styles.fieldName}>Services :</div> <div className={styles.content}>Dry cleaning</div>
+            <div className={styles.fieldName}>Services :</div> <div className={styles.content}>
+                 {staffData.dry_cleaning.enable ? staffData.repairing.enable ? staffData.washing.enable ? "Dry Cleaning, Repairing, Washing" : "Dry Cleaning, Repairing" : staffData.washing.enable ? "Dry Cleaning, Washing" : "Dry Cleaning" : staffData.repairing.enable ? staffData.washing.enable ? "Repairing, Washing" : "Repairing" : staffData.washing.enable ? "Washing" : "" }</div>
             </div>
             
             <div className={styles.row}>
-            <div className={styles.fieldName}>Rating :</div> <div className={styles.content}><Rating style={{fill:"orange"}} name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly /></div>
+            <div className={styles.fieldName}>Rating :</div> <div className={styles.content}><Rating style={{fill:"orange"}} name="half-rating-read" defaultValue={staffData.rating} precision={0.5} readOnly /></div>
             </div>
             
             </div>

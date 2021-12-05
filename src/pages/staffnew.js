@@ -7,41 +7,38 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // Button
-function Usernew() {
+function Staffnew() {
 	const navigate = useNavigate();
-	const [userData, setUserData] = useState({
+	const [staffData, setStaffData] = useState({
 		name: "",
 		userName: "",
 		password: "",
 		address: "",
 		phone: "",
 		email: "",
-		car_no: "",
 	});
+
 	const [tempPass, setTempPass] = useState("");
 	const [error, setError] = useState({
 		username: false,
 		pass: false,
 	});
-	const handleSubmit = async (e) => {
+
+const handleSubmit = async (e) => {
 		e.preventDefault();
-		if (!(tempPass === userData.password)) setError({ ...error, pass: true });
+		if (!(tempPass === staffData.password)) setError({ ...error, pass: true });
 		await axios
-			.post("http://localhost:8080/usernew/usernamecheck", userData)
+			.post("http://localhost:8080/staffnew/staffnamecheck", staffData)
 			.then((res) => {
 				console.log(res.data);
 				if (res.data === false) setError({ ...error, username: true });
 			});
 
-		if (error.pass === false && error.username === false && userData.password != "" && userData.userName != "") {
-			localStorage.setItem("userData", JSON.stringify(userData));
-			// history.push("/verify");
-			navigate("/verify");
+		if (error.pass === false && error.username === false && staffData.password != "" && staffData.userName != "") {
+			axios.post("http://localhost:8080/staffnew/addstaff", staffData)
+			.then((res) => {navigate("/");});
 		}
 	};
-
-
-
 	return (
 		<>
 			<div className={styles.container}>
@@ -51,7 +48,7 @@ function Usernew() {
 				</div>
 				<div className={styles.rightCol}>
 					<div className={styles.heading}>
-						<h2>User Registration</h2>
+						<h2>Staff Registration</h2>
 					</div>
 					<div className={styles.breakLine}></div>
 					<form className={styles.boxForm} onSubmit={(e) => handleSubmit(e)}>
@@ -60,30 +57,34 @@ function Usernew() {
 								<TextField
 									fullWidth
 									maxWidth="sm"
+									
 									id="outlined-required"
 									label="Full Name"
-									variant="outlined"
 									defaultValue=""
-									value={userData.name}
+									value={staffData.name}
 									onChange={(e) =>
-										setUserData({ ...userData, name: e.target.value })
+										setStaffData({ ...staffData, name: e.target.value })
 									}
 								/>
 							</div>
+						
 							<div className={styles.pw}>
 								<TextField
 									fullWidth
 									maxWidth="sm"
+									
 									id="outlined-required"
 									label="Username"
 									defaultValue=""
-									value={userData.userName}
 									error={error.username}
 									helperText={error.username ? "Username already taken" : "" }
-									onChange={(e) => {
-										setUserData({ ...userData, userName: e.target.value });
+									value={staffData.userName}
+									onChange={(e) =>
+										{
+										setStaffData({ ...staffData, userName: e.target.value })
 										setError({ ...error, username: false });
-									}}
+										}
+									}
 								/>
 							</div>
 							<div className={styles.pw}>
@@ -94,11 +95,11 @@ function Usernew() {
 									label="Password"
 									type="password"
 									autoComplete="current-password"
-									value={userData.password}
-									error={userData.password?false:true}
-									helperText={userData.password?"":"Password is required."}
+									error={staffData.password?false:true}
+									helperText={staffData.password?"":"Password is required."}
+									value={staffData.password}
 									onChange={(e) =>
-										setUserData({ ...userData, password: e.target.value })
+										setStaffData({ ...staffData, password: e.target.value })
 									}
 								/>
 							</div>
@@ -110,9 +111,9 @@ function Usernew() {
 									label="Confirm Password"
 									type="password"
 									autoComplete="current-password"
-									error={tempPass === userData.password ? false : true}
+									error={tempPass === staffData.password ? false : true}
 									helperText={
-										tempPass === userData.password
+										tempPass === staffData.password
 											? ""
 											: "Paswords Do Not Match"
 									}
@@ -127,9 +128,10 @@ function Usernew() {
 									id="outlined-textarea"
 									label="Residential Address"
 									multiline
-									value={userData.address}
+									required
+									value={staffData.address}
 									onChange={(e) =>
-										setUserData({ ...userData, address: e.target.value })
+										setStaffData({ ...staffData, address: e.target.value })
 									}
 								/>
 							</div>
@@ -141,9 +143,10 @@ function Usernew() {
 									label="Email ID"
 									type="email"
 									autoComplete="current-password"
-									value={userData.email}
+									required
+									value={staffData.email}
 									onChange={(e) =>
-										setUserData({ ...userData, email: e.target.value })
+										setStaffData({ ...staffData, email: e.target.value })
 									}
 								/>
 							</div>
@@ -151,27 +154,14 @@ function Usernew() {
 								<TextField
 									fullWidth
 									maxWidth="sm"
+									required
 									id="outlined-required"
 									label="Mobile number"
 									defaultValue=""
-									value={userData.phone}
+									value={staffData.phone}
 									onChange={(e) =>
-										setUserData({ ...userData, phone: e.target.value })
+										setStaffData({ ...staffData, phone: e.target.value })
 									}
-								/>
-							</div>
-							<div className={styles.pw}>
-								<TextField
-									fullWidth
-									maxWidth="sm"
-									id="outlined-required"
-									label="Car Registration Number"
-									defaultValue=""
-									value={userData.car_no}
-									onChange={(e) =>
-										setUserData({ ...userData, car_no: e.target.value })
-									}
-									style={{ marginBottom: "2em" }}
 								/>
 							</div>
 							<Button
@@ -185,13 +175,10 @@ function Usernew() {
 						</div>
 						<div className={styles.reg}>
 							Already registered? &nbsp;
-							<Link to="/user" style={{ textDecoration: "none" }}>
+							<Link to="/staff" style={{ textDecoration: "none" }}>
 								<a href="#">Sign in</a>
 							</Link>
 						</div>
-						<div className={styles.reg}>
-                            <Link to="/" style={{   textDecoration: "none" }}><a href="#" >Back To Homepage</a></Link>
-                        </div>
 					</form>
 				</div>
 			</div>
@@ -199,4 +186,4 @@ function Usernew() {
 	);
 }
 
-export default Usernew;
+export default Staffnew;
