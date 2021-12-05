@@ -58,7 +58,8 @@
 }
 
 .manageTitle {
-  margin: 4vh;
+  /* margin-bottom: 0; */
+  margin: 3vh;
 }
 
 .tablecontent, .status {

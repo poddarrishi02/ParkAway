@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import styles from '../styles/dashboard/admin.module.css'
 import Button from '@mui/material/Button';
 import AddWorker from './AddWorker';
+import ManageCars from './ManageCars';
 import { Link } from 'react-router-dom'
 import LogoutIcon from '@mui/icons-material/Logout';
 import Default from './Default';
+import WorkersReport from './WorkersReport';
 
 function AdminDash() {
-    const [active, setactive] = useState(<AddWorker />);
+    const [active, setactive] = useState(<WorkersReport />);
     return (
         <div className={styles.outer}>
             <div className={styles.topNav}>
@@ -30,23 +32,17 @@ function AdminDash() {
                     <Button onClick={() => {
                                         setactive(<AddWorker />)
                                     }} variant="text" style={{ fontWeight:"bolder",fontFamily:"Ubuntu",minWidth:"100%",justifyContent: "flex-start", color: "white", textTransform: "none",fontSize: "1.1em"  }}
-                                        sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Manage Parking Space</Button>
-                    </div>
-                    <div className={styles.dashItems}>
-                    <Button onClick={() => {
-                                        setactive(<AddWorker />)
-                                    }} variant="text" style={{ fontWeight:"bolder",fontFamily:"Ubuntu",minWidth:"100%",justifyContent: "flex-start", color: "white", textTransform: "none",fontSize: "1.1em"  }}
                                         sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Manage Parking Slots</Button>
                     </div>
                     <div className={styles.dashItems}>
                     <Button onClick={() => {
-                                        setactive(<AddWorker />)
+                                        setactive(<ManageCars />)
                                     }} variant="text" style={{ fontWeight:"bolder",fontFamily:"Ubuntu",minWidth:"100%",justifyContent: "flex-start", color: "white", textTransform: "none",fontSize: "1.1em"  }}
                                         sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Manage Cars</Button>
                     </div>
                     <div className={styles.dashItems}>
                     <Button onClick={() => {
-                                        setactive(<AddWorker />)
+                                        setactive(<WorkersReport />)
                                     }} variant="text" style={{ fontWeight:"bolder",fontFamily:"Ubuntu",minWidth:"100%",justifyContent: "flex-start", color: "white", textTransform: "none",fontSize: "1.1em"  }}
                                         sx={{ ':hover': { bgcolor: 'rgb(60,60,60)' } }}>Workers Report</Button>
                     </div>

@@ -55,7 +55,7 @@ function Usernew() {
                     </div>
                     <form className={styles.boxForm} action="/" method="get">
                         <div className={styles.boxInputs}>
-                            <div className={styles.pw}>
+                            <div className={styles.pw1}>
                                 <TextField
                                     fullWidth
                                     maxWidth="sm"
@@ -156,7 +156,9 @@ function Usernew() {
                         <div className={styles.reg}>
                             Already registered?  &nbsp;<Link to="/user" style={{ textDecoration: "none" }}><a href="#" >Sign in</a></Link>
                         </div>
-
+                        <div className={styles.reg}>
+                            <Link to="/" style={{   textDecoration: "none" }}><a href="#" >Back To Homepage</a></Link>
+                        </div>
                     </form>
                 </div>
             </div>
