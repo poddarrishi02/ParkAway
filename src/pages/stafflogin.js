@@ -79,6 +79,9 @@ function Stafflogin({access, setAccess}) {
 						</Link>
 					</div>
 					<div className={styles.breakLine}></div>
+					<div className={styles.reg}>
+                            <Link to="/" style={{ fontSize: "1.2em", fontWeight: "bolder", textDecoration: "none" }}><a href="#" >Back To Homepage</a></Link>
+                        </div>
 				</form>
 			</div>
 		</>

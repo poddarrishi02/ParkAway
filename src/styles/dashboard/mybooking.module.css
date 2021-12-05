@@ -34,7 +34,6 @@ table {
     color: #fff;
     border-radius: 1em 1em 0 0;
   }
-  
   th, td {
     padding: 1em;
   }
@@ -50,8 +49,11 @@ table {
     position: relative;
     font-size: 1.5em;
     font-weight: bolder;
+    white-space: nowrap;
   } 
-  
+  .serviceop{
+    white-space: nowrap;
+  }
   td::before {
     content: attr(data-label);
     position: absolute;

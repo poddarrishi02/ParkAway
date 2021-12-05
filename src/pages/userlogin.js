@@ -109,6 +109,9 @@ function Userlogin({ access, setAccess }) {
 								</a>
 							</div>
 						</div>
+						<div className={styles.reg}>
+                <Link to="/" style={{ fontSize: "1.2em", fontWeight: "bold", textDecoration: "none" }}><a href="#" >Back To Homepage</a></Link>
+              </div>
 					</form>
 					<div className={styles.welcomeOuter}>
 						<p className={styles.welcome}>Welcome to</p>

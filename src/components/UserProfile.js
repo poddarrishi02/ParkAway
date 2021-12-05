@@ -34,7 +34,7 @@ function UserProfile({userData}) {
             
             </div>
             <div className={styles.pic}>
-            <Avatar sx={{ height: '30vh', width: '13vw' }} src="/broken-image.jpg" /></div>
+            <Avatar sx={{ height: '22vh', width: '10vw' }} src="/broken-image.jpg" /></div>
             </div>
         </div>
     )

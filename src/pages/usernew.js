@@ -189,6 +189,9 @@ function Usernew() {
 								<a href="#">Sign in</a>
 							</Link>
 						</div>
+						<div className={styles.reg}>
+                            <Link to="/" style={{   textDecoration: "none" }}><a href="#" >Back To Homepage</a></Link>
+                        </div>
 					</form>
 				</div>
 			</div>
