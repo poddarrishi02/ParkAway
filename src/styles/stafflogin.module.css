@@ -8,7 +8,6 @@
     font-family: "Ubuntu";
 }
 
-
 .container,
 .boxForm,
 .socials {
@@ -27,9 +26,9 @@
 }
 
 .container {
-    min-width: 25em;
+    min-width: 24em;
     padding: 1.2em;
-
+margin-bottom: 4vh;
     border-radius: 20px;
     background-color: rgb(34, 34, 34);
 }
@@ -48,7 +47,7 @@ z-index:20;
     margin-top: 1vh;
 }
 .heading {
-    padding: 25px;
+    padding: 15px;
     font-size: 1.5em;
     color: rgb(68, 68, 68);
 }

@@ -96,22 +96,24 @@ function Userlogin({ access, setAccess }) {
 
 						<div className={styles.breakLine}></div>
 
-						<div className={styles.socials}>
-							<div className={styles.social}>
-								<a href="#" className={styles.linksocials}>
-									<FaFacebookF />
-									{/* <ion-icon name="logo-google"></ion-icon> */}
-								</a>
-							</div>
+            {/* <div className={styles.socials}>
+              <div className={styles.social}>
+                <a href="#" className={styles.linksocials}>
+                  <FaFacebookF />
+                  <ion-icon name="logo-google"></ion-icon>
+                </a>
+              </div>
 
-							<div className={styles.social}>
-								<a href="#" className={styles.linksocials}>
-									<FaGoogle />
-									{/* <ion-icon name="logo-github"></ion-icon> */}
-								</a>
-							</div>
-						</div>
-						<div className={styles.reg}>
+              <div className={styles.social}>
+                <a href="#" className={styles.linksocials}>
+                  <FaGoogle />
+                  <ion-icon name="logo-github"></ion-icon>
+                </a>
+              </div>
+              
+
+            </div> */}
+            <div className={styles.reg}>
                 <Link to="/" style={{ fontSize: "1.2em", fontWeight: "bold", textDecoration: "none" }}><a href="#" >Back To Homepage</a></Link>
               </div>
 					</form>
