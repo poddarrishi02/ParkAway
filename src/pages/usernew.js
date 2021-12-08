@@ -44,10 +44,16 @@ function Usernew() {
 
 	return (
 		<>
+		<div className={styles.outer}>
 			<div className={styles.container}>
 				<div className={styles.welcomeOuter}>
+					<div className={styles.mar}>
 					<p className={styles.welcome}>Welcome to</p>
-					<h1 className={styles.welcome}>Car Booking Service</h1>
+					<h1 className={styles.welcome1}>Car Booking Service</h1>
+					</div>
+					<div className={styles.reg}>
+                            <Link to="/" style={{   textDecoration: "none" }}><a className={styles.regnew} href="#" >Back To Homepage</a></Link>
+                        </div>
 				</div>
 				<div className={styles.rightCol}>
 					<div className={styles.heading}>
@@ -189,11 +195,10 @@ function Usernew() {
 								<a href="#">Sign in</a>
 							</Link>
 						</div>
-						<div className={styles.reg}>
-                            <Link to="/" style={{   textDecoration: "none" }}><a href="#" >Back To Homepage</a></Link>
-                        </div>
+						
 					</form>
 				</div>
+			</div>
 			</div>
 		</>
 	);

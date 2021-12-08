@@ -41,7 +41,7 @@ function Userlogin({ access, setAccess }) {
 						<div className={styles.boxInputs}>
 							{/* <div className={styles.inputsEmail}> */}
 							{/* <input type="email" name="email" id="email" className={styles.input} placeholder="Email:"></input> */}
-							<div className={styles.pw}>
+							<div className={styles.inputsPassword}>
 								<TextField
 									fullWidth
 									maxWidth="sm"
@@ -55,7 +55,7 @@ function Userlogin({ access, setAccess }) {
 									}
 								/>
 							</div>
-							<div className={styles.pw}>
+							<div className={styles.inputsPassword}>
 								<TextField
 									fullWidth
 									maxWidth="sm"
@@ -78,13 +78,15 @@ function Userlogin({ access, setAccess }) {
             <button className={styles.btnLogin} type="submit" value="enter">Sign in</button>
           </div> */}
 							{/* <input type="submit" value="Sign in" className={styles.submit}></input> */}
+							<div className={styles.boxLogin}>
 							<Button
 								variant="contained"
 								type="submit"
-								className={styles.submit}
+								className={styles.btnLogin}
 							>
 								Sign in
 							</Button>
+							</div>
 						</div>
 						<div className={styles.reg}>
 							<Link to="/usernew" style={{ textDecoration: "none" }}>

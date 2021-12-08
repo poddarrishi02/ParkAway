@@ -38,13 +38,15 @@
 
 .boxForm {
     min-width: 24em;
-
+z-index:20;
     padding: 2.2em 1.1em;
     border-radius: 10px;
     background-color: rgb(238, 238, 255);
     flex-direction: column;
 }
-
+.submitt{
+    margin-top: 1vh;
+}
 .heading {
     padding: 25px;
     font-size: 1.5em;
@@ -56,16 +58,24 @@
     display: flex;
     flex-direction: column;
 }
-
+.container{
+    position: relative;
+    bottom: 6vh;
+}
 .pw {
-    margin-top: 2em;
-    margin-bottom: 1.05em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     /* margin-left: 0; */
 }
-
 .reg {
-    margin-top: 2em;
+    margin-top: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
     /* align-self: flex-start; */
+}
+.reg1{
+    font-weight: bolder;
+    margin-top: 1vh;
 }
 
 .reg a {

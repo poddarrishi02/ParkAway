@@ -5,11 +5,17 @@ import AddIcon from '@mui/icons-material/Add';
 import SaveIcon from '@mui/icons-material/Save';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import { useState } from 'react';
-
+import axios from 'axios';
 import styles from '../styles/dashboard/manageCars.module.css'
 function ManageCars() {
     const carsInitial = [{ name: "Ken Griffey", carno: "xxxx", id: 1 }, { name: "Derek Jeter", carno: "xxxx", id: 2 }, { name: "Cal Ripken", carno: "xxxx", id: 3 }];
     const [cars, setcars] = useState(carsInitial);
+    const [user, setUser] = useState([]);
+    React.useEffect(() => {
+        axios.get("http://localhost:8080/admin/userData").then(res => {
+            setUser(res.data);
+    })
+    }, [])
     return (
         <div className={styles.outer}>
             <div className={styles.top}>
@@ -34,11 +40,11 @@ function ManageCars() {
                         <th>Action</th>
                     </thead>
                     <tbody>
-                        {cars.map(w => {
+                        {user.map(w => {
                             return (
                                 <tr>
                                     <td className={styles.tablecontent} data-label="name">{w.name} </td>
-                                    <td className={styles.carno} data-label="war">{w.carno}</td>
+                                    <td className={styles.carno} data-label="war">{w.car_no}</td>
                                     <td data-label="ba">
                                         
                                         <Button id={w.id} style={{width:"9vw"}} variant="contained" startIcon={<DeleteIcon style={{fill: "white" }} />}

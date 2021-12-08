@@ -74,16 +74,20 @@
     /* position: relative; */
     min-width: 100%;
     height: 40px;
+    /* margin: 2vh; */
 }
 
+.inputsPassword {
+margin-bottom: 2vh;
+margin-top: 2vh;
+}
 .inputsEmail {
     margin-bottom: 25px;
 }
 
-.inputsRemember {
-    margin: 15px 0 15px 0;
+.boxLogin{
+    margin-top: 2vh;
 }
-
 .input {
     /* appearance: none; */
 
@@ -143,8 +147,8 @@
     height: 40px;
     margin-bottom: 15px;
     padding: 2px;
-    border-radius: 100px;
-    background-color: rgb(34, 34, 34);
+    /* border-radius: 20px; */
+    /* background-color: rgb(34, 34, 34); */
     overflow: hidden;
 }
 
@@ -158,7 +162,7 @@
     width: 100%;
     height: 100%;
     border: none;
-    background-color: rgb(34, 34, 34);
+    /* background-color: rgb(34, 34, 34); */
     font-size: 1em;
     color: rgb(238, 238, 255);
     cursor: pointer;
