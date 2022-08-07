@@ -1,12 +1,12 @@
 # Car Parking Slot Booking Application
-This application helps **users** to book car parking slots and avail other services like car washing and dry cleaning.<br/>
-The **admin** can add and remove workers based on their performance.<br/>
-**Workers** can choose the services they would like to provide and also choose their working slots.<br/><br/>
+This application helps * *users* * to book car parking slots and avail other services like car washing and dry cleaning.<br/>
+The * *admin* * can add and remove workers based on their performance.<br/>
+* *Workers* * can choose the services they would like to provide and also choose their working slots.<br/><br/>
 
 ## Implemented Using
 Frontend : React JS <br />
 BackEnd : SpringBoot <br />
-DataBase : Mongo DB Atlas
+DataBase : Mongo DB Atlas<br/><br/>
 
 ## Project Module ScreenShots
 
